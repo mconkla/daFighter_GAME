@@ -11,12 +11,7 @@ public class playerMove : MonoBehaviour
 
 
     [HideInInspector]
-    public string horizontal, vertical, fire = "";
-    [HideInInspector]
-    public int otherPlayer;
-    [HideInInspector]
-    public bool punch;
-
+    public string horizontal, vertical= "";
 
 
     public bool grounded = true;
@@ -24,10 +19,11 @@ public class playerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        horizontal = "Horizontal";// + this.gameObject.tag.ToString();
-        vertical = "Vertical";// + this.gameObject.tag.ToString();
-        fire = "Fire1";//+ this.gameObject.tag.ToString();
+
         otherPlayer = this.gameObject.tag == "1" ? 2 : 1;
+
+        horizontal = "Horizontal" + this.gameObject.tag.ToString();
+        vertical = "Vertical" + this.gameObject.tag.ToString();
     }
 
     // Update is called once per frame
@@ -59,14 +55,12 @@ public class playerMove : MonoBehaviour
         }
         else if (Input.GetAxis(vertical) < -0.5)
         {
-            //do something
+            //do something -> crouch
         }
 
+      
 
-
-        
-
-    }
+        }
 
 
 
@@ -77,17 +71,5 @@ public class playerMove : MonoBehaviour
             grounded = true;
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == otherPlayer.ToString())
-        {
-
-            if (Input.GetButton(fire))
-            {
-                Debug.Log("Punc" + fire);
-                collision.GetComponent<playerMove>().punch = true;
-
-            }
-        }
-    }
+    
 }
