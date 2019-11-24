@@ -31,4 +31,13 @@ public class options : MonoBehaviour
         this.gameObject.SetActive(true);
         OptionsCanvas.gameObject.SetActive(false);
     }
+
+    public void switchtoKeyboard()
+    {
+
+    }
+    public void switchtoController()
+    {
+
+    }
 }
