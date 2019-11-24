@@ -15,4 +15,18 @@ public class launch : MonoBehaviour
     {
         
     }
+
+    public void launchDual()
+    {
+
+
+
+    }
+
+    public void launchSingle()
+    {
+
+
+
+    }
 }
