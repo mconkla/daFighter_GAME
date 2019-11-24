@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class options : MonoBehaviour
 {
+
+    public GameObject OptionsCanvas;
     // Start is called before the first frame update
     void Start()
     {
-        StaticClass.OPTIONS = "test";
+        //StaticClass.OPTIONS = "test";
     }
 
     // Update is called once per frame
@@ -16,14 +18,17 @@ public class options : MonoBehaviour
         
     }
 
-    public void option()
+    public void ToOption()
     {
         // hide current buttons
-        foreach (Transform child in transform){
-            child.gameObject.SetActive(false);
-        }
-           
+        
+       this.gameObject.SetActive(false);
         // display new option menu
-
+        OptionsCanvas.gameObject.SetActive(true);
+    }
+    public void ToStartmenu()
+    {
+        this.gameObject.SetActive(true);
+        OptionsCanvas.gameObject.SetActive(false);
     }
 }
