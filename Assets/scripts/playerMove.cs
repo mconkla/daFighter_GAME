@@ -19,6 +19,9 @@ public class playerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+        otherPlayer = this.gameObject.tag == "1" ? 2 : 1;
+
         horizontal = "Horizontal" + this.gameObject.tag.ToString();
         vertical = "Vertical" + this.gameObject.tag.ToString();
     }
