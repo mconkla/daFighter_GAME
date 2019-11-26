@@ -28,8 +28,6 @@ public class playerMove : MonoBehaviour
     {
         horizontal = "Horizontal" + this.gameObject.tag.ToString();
         vertical = "Vertical" + this.gameObject.tag.ToString();
-        fire = "Fire1"+ this.gameObject.tag.ToString();
-        otherPlayer = this.gameObject.tag == "1" ? 2 : 1;
         myAttackSystem = this.gameObject.GetComponent<attackSystem>();
     }
 
