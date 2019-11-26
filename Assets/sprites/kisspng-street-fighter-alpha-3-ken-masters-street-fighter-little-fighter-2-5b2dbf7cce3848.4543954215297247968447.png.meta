@@ -1,0 +1,1519 @@
+fileFormatVersion: 2
+guid: aa6ea62139ebfee4b85b306c2a985f3d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1118172306232318211
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_0
+  - first:
+      213: 647291618622504497
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_3
+  - first:
+      213: -9145419605191344217
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_4
+  - first:
+      213: 6922747070119889359
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_5
+  - first:
+      213: -7124165112380755616
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_9
+  - first:
+      213: -2375290170090392153
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_10
+  - first:
+      213: -5098628945333500117
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_11
+  - first:
+      213: -7266221731155023010
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_12
+  - first:
+      213: -7410540646760006244
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_13
+  - first:
+      213: 4561810045437710033
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_14
+  - first:
+      213: 4130465010034087688
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_15
+  - first:
+      213: -8390195535741638671
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_16
+  - first:
+      213: -8643560116498571824
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_17
+  - first:
+      213: -2023926957142573439
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_18
+  - first:
+      213: -1629584894264796710
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_19
+  - first:
+      213: 6947480540114745377
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_21
+  - first:
+      213: -5765840706295015882
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_22
+  - first:
+      213: 2903514031053780736
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_23
+  - first:
+      213: -8567301141884135754
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_24
+  - first:
+      213: 5828543916238725984
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_25
+  - first:
+      213: -4346568322153909550
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_26
+  - first:
+      213: -4148114038189521039
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_27
+  - first:
+      213: 2066762500303632730
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_28
+  - first:
+      213: 1225412203101542932
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_29
+  - first:
+      213: -5141478239874447388
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_30
+  - first:
+      213: -135765546317394284
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_31
+  - first:
+      213: -7800223451651787113
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_32
+  - first:
+      213: 875626259373095256
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_33
+  - first:
+      213: -4725205558485831442
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_34
+  - first:
+      213: -5482855144117242676
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_35
+  - first:
+      213: 7768392884978867034
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_36
+  - first:
+      213: 5854658550721352984
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_37
+  - first:
+      213: -7441456882212038538
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_38
+  - first:
+      213: 8094021344653069750
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_39
+  - first:
+      213: -8715276236770041004
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_40
+  - first:
+      213: 5469218978351939446
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_41
+  - first:
+      213: 6812490018529069042
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_42
+  - first:
+      213: -8523423508435712377
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_43
+  - first:
+      213: -738251423308328547
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_44
+  - first:
+      213: 5666503898726998465
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_45
+  - first:
+      213: 1875227376569643666
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_46
+  - first:
+      213: -4538197605985777756
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_47
+  - first:
+      213: 5375292451637869011
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_48
+  - first:
+      213: 4378738984024661040
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_49
+  - first:
+      213: -2748399500428956130
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_50
+  - first:
+      213: 3346449230065351687
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_51
+  - first:
+      213: 583144169551034260
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_52
+  - first:
+      213: -6993617304265191970
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_53
+  - first:
+      213: 8020734666343759346
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_54
+  - first:
+      213: 3905764695093865357
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_55
+  - first:
+      213: -5454939469276903265
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_56
+  - first:
+      213: -2464855973188558451
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_57
+  - first:
+      213: -7007705090243883699
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_58
+  - first:
+      213: 3087658021215397580
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_59
+  - first:
+      213: -6736716351796347664
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_60
+  - first:
+      213: 5021858867373861390
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_61
+  - first:
+      213: 836651007415539898
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_62
+  - first:
+      213: 4040273607831192492
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_63
+  - first:
+      213: 7566813575609805094
+    second: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_64
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 736
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab9bf3dab5bc5842ae8cf2c3e755b4a
+      internalID: -1118172306232318211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 736
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194888bb5ced799448a3c5386f28edef
+      internalID: 647291618622504497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 736
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ff4c9eeb2beca94daa08d263a1aa556
+      internalID: -9145419605191344217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 672
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c437c91d3f67d48bd6d8e6a9a568da
+      internalID: 6922747070119889359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 672
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98891d4266af17a4f9ecb0d4b094ca56
+      internalID: -7124165112380755616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877ee0c791296dd4d8ab59ee848ee4f9
+      internalID: -2375290170090392153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 608
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5fe0b56653f774890c0e1dc57f0c83
+      internalID: -5098628945333500117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 608
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9379ff9d950fe9c40afc926e4229f7dd
+      internalID: -7266221731155023010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 608
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa5ac5cc40c08c64da9225724ed7ed51
+      internalID: -7410540646760006244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 608
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a313ace5a62964aaf87859d2fba721
+      internalID: 4561810045437710033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 544
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8c709e84eb1714ba49406721cd5d46
+      internalID: 4130465010034087688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 544
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49d1fcc550c6dc479a45a93ec46e190
+      internalID: -8390195535741638671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_17
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 544
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 126526c817599fe4cba23afa6a643a9e
+      internalID: -8643560116498571824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 544
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9510129e0dbfb964f9957d5c16550589
+      internalID: -2023926957142573439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_19
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 544
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cce91438e03e3845aed4136772b4d1d
+      internalID: -1629584894264796710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c680a005d41cdf94587a7df014756b53
+      internalID: 6947480540114745377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_22
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 480
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb36aa6845b43b4c8780eb6a6caee33
+      internalID: -5765840706295015882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_23
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 480
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df846558f2e8fc4482f641b7287c6a3
+      internalID: 2903514031053780736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 042a1e171ae27a8469c7a2c8402fda60
+      internalID: -8567301141884135754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 480
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ac1b0a4954033499163f2328ddc04f
+      internalID: 5828543916238725984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 480
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339b9014cbdbf0e4192d997108abd145
+      internalID: -4346568322153909550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a8624c919821ac4d8e7687eb38d4491
+      internalID: -4148114038189521039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 416
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b39ec2c773be854bb5e1e62505d7ef8
+      internalID: 2066762500303632730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bbf2d71a057ea498bd3cc590bb0974
+      internalID: 1225412203101542932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 352
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fdce28d8c558e47bfa0c298fb5e3c3
+      internalID: -5141478239874447388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0f307e6972ca44383177391495d0aa
+      internalID: -135765546317394284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 352
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c043b5d2937ac6a4cb86594aa8cbdae3
+      internalID: -7800223451651787113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78aadcc96db58994a8ca731222b77073
+      internalID: 875626259373095256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3fae12f48d02f4f87716da788db92d
+      internalID: -4725205558485831442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_35
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6275db80d4b572644bd8eb7f8ebbbb16
+      internalID: -5482855144117242676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73638efba5c26c47834a9e72451cfbf
+      internalID: 7768392884978867034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_37
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 288
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 321ce0df6fb9d6d4db7fa05e5177a948
+      internalID: 5854658550721352984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_38
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 288
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9622eb763a2cc7c4c817186a2116b7a3
+      internalID: -7441456882212038538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3dfaacedd515a4f82a6200fa1533e7
+      internalID: 8094021344653069750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_40
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8531054b40b0344be7dbcc0cfa47d8
+      internalID: -8715276236770041004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_41
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97c49732b9c369a499e901be51d021a5
+      internalID: 5469218978351939446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59699b6cb94fa5c47bc438f893ed780c
+      internalID: 6812490018529069042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_43
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d4eaf6f05babd54fa039abe77d41228
+      internalID: -8523423508435712377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_44
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3133b3b1fbbd64241a592f783242c130
+      internalID: -738251423308328547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a414a1368ffdd488184f461927b847
+      internalID: 5666503898726998465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_46
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433ad65364f75294197ea84bab424644
+      internalID: 1875227376569643666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_47
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30b5ca2e55705b4fa2850d20d992979
+      internalID: -4538197605985777756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_48
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5c880bd4d2c914d87c8a45fac90286
+      internalID: 5375292451637869011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_49
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929afffff4ca0254c99ad81d6c2548dd
+      internalID: 4378738984024661040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_50
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 160
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a92bb1f2b3fbb1438e3047e2a969011
+      internalID: -2748399500428956130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec5e2722aeae514a800163001578693
+      internalID: 3346449230065351687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_52
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58628d47907df947abbf4f649f85c82
+      internalID: 583144169551034260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_53
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983f2af2934cc834cad22cdcf5da47f1
+      internalID: -6993617304265191970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_54
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee505da1e30a84459a76b7a8f54ae2a
+      internalID: 8020734666343759346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_55
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd981d087dab0045a39a37243c0e45a
+      internalID: 3905764695093865357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_56
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffac3dc14495914e8310fa36df2b336
+      internalID: -5454939469276903265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_57
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c7d88756162d14b8af6850d4560118
+      internalID: -2464855973188558451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63cb87e9c50fb8449d4b220da66bfad
+      internalID: -7007705090243883699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_59
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd86b861ef2a494d90ae2d8c5e13a0d
+      internalID: 3087658021215397580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_60
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e48460582ec66846b9f1423a68d443e
+      internalID: -6736716351796347664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_61
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b570deb21d0af4393b8eb476dc6310
+      internalID: 5021858867373861390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_62
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42da0443d1b806439042f813a1fd041
+      internalID: 836651007415539898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_63
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2271c671bd62822458c2e38a13280404
+      internalID: 4040273607831192492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kisspng-street-fighter-alpha-3-ken-masters-street-fighter-little-fighter-2-5b2dbf7cce3848.4543954215297247968447_64
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4940be19dfaba46926aa02fcf7b83b
+      internalID: 7566813575609805094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
