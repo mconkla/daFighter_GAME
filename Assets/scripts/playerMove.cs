@@ -26,11 +26,9 @@ public class playerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        myAttackSystem = this.gameObject.GetComponent<attackSystem>();
-
         horizontal = "Horizontal" + this.gameObject.tag.ToString();
         vertical = "Vertical" + this.gameObject.tag.ToString();
+        myAttackSystem = this.gameObject.GetComponent<attackSystem>();
     }
 
     // Update is called once per frame
