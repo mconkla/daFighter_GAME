@@ -12,7 +12,7 @@ public class playerMove : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
 
 
-
+    public CircleCollider2D upperBody;
 
     [HideInInspector]
     public string horizontal, vertical= "";
@@ -41,10 +41,19 @@ public class playerMove : MonoBehaviour
 
     void getInput()
     {
+        
 
+        
+
+        Debug.Log(Input.GetAxis(horizontal));
 
         if (Input.GetAxis(horizontal) > 0.5)
         {
+            this.gameObject.GetComponent<Animator>().SetBool("walk", true);
+            this.gameObject.GetComponent<Animator>().SetBool("kick", false);
+            this.gameObject.GetComponent<Animator>().SetBool("punch", false);
+            this.gameObject.GetComponent<Animator>().SetBool("crouch", false);
+            this.gameObject.GetComponent<Animator>().SetBool("block", false);
             //Debug.Log(Input.GetAxis(horizontal).ToString());
 
             if (!myAttackSystem.blocked) {
@@ -58,7 +67,11 @@ public class playerMove : MonoBehaviour
         }
         else if (Input.GetAxis(horizontal) < -0.5)
         {
-
+            this.gameObject.GetComponent<Animator>().SetBool("walk", true);
+            this.gameObject.GetComponent<Animator>().SetBool("kick", false);
+            this.gameObject.GetComponent<Animator>().SetBool("punch", false);
+            this.gameObject.GetComponent<Animator>().SetBool("crouch", false);
+            this.gameObject.GetComponent<Animator>().SetBool("block", false);
             if (!myAttackSystem.blocked)
             {
                 Vector3 targetVelocity = new Vector2(-speed * 0.10f, rb.velocity.y);
@@ -69,24 +82,36 @@ public class playerMove : MonoBehaviour
            // rb.AddForce(new Vector2(-speed, 0));
             this.gameObject.transform.localScale = new Vector3(-1 * Mathf.Abs(this.gameObject.transform.localScale.y), this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
         }
+        else
+        {
+            this.gameObject.GetComponent<Animator>().SetBool("walk", false);
+           
+        }
 
         if (Input.GetAxis(vertical) > 0.2 && grounded)
         {
             if (!myAttackSystem.blocked)
             {
+                this.gameObject.GetComponent<Animator>().SetBool("grounded", false);
+               
                 grounded = false;
                 rb.AddForce(new Vector2(0f, jump));
                 //rb.AddForce(new Vector2(speed * Mathf.Sign(Input.GetAxis(horizontal)), jump));
             }
         }
-        else if (Input.GetAxis(vertical) < -0.5)
+        if (Input.GetAxis(vertical) < -0.5)
         {
-            //do something -> crouch
+            upperBody.enabled = false; 
+        }
+        else
+        {
+            upperBody.enabled = true;
         }
 
-      
+        this.gameObject.GetComponent<Animator>().SetBool("crouch", !upperBody.enabled);
 
-        }
+
+    }
 
 
     public void knockback(Transform enemy)
@@ -101,6 +126,7 @@ public class playerMove : MonoBehaviour
     {
         if (collision.collider.tag == "floor")
         {
+            this.gameObject.GetComponent<Animator>().SetBool("grounded", true);
             grounded = true;
         }
     }

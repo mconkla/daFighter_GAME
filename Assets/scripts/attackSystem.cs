@@ -49,12 +49,10 @@ public class attackSystem : MonoBehaviour
 
         hitBox.enabled = triggerOn;
         InputPlayer();
-
-      
         setTriggerFalse();
-       
         
-       
+
+
     }
 
 
@@ -62,6 +60,7 @@ public class attackSystem : MonoBehaviour
     {
         if (Input.GetButtonDown(punchInput) && !blocked){
 
+            this.gameObject.GetComponent<Animator>().SetBool("kick", false);
             this.gameObject.GetComponent<Animator>().SetBool("punch", true);
 
             timeStamp = Time.time;
@@ -69,12 +68,12 @@ public class attackSystem : MonoBehaviour
             dmg = punchDMG;
             myText = "PUNCH : " + dmg;
             
-           
-
         }
         else if(Input.GetButtonDown(kickInput) && !blocked)
         {
 
+            
+            this.gameObject.GetComponent<Animator>().SetBool("punch", false);
             this.gameObject.GetComponent<Animator>().SetBool("kick", true);
             timeStamp = Time.time;
             triggerOn = true;
@@ -89,12 +88,15 @@ public class attackSystem : MonoBehaviour
 
             blocked = true;
             myText = "BLOCK : " + dmg;
+            this.gameObject.GetComponent<Animator>().SetBool("kick", false);
+            this.gameObject.GetComponent<Animator>().SetBool("punch", false);
             this.gameObject.GetComponent<Animator>().SetBool("block", true);
         }
-        else if (Input.GetButtonUp(blockInput))
+        else if (Input.GetButtonUp(blockInput))//on release
         {
             blocked = false;
             myText = "";
+            
             this.gameObject.GetComponent<Animator>().SetBool("block", false);
             Debug.Log("ICH BLOCKE NICHT MEHR");
         }
@@ -107,10 +109,10 @@ public class attackSystem : MonoBehaviour
         if (triggerOn && Time.time - timeStamp > 0.3)
         {
             triggerOn = false;
+            myText = "";
             this.gameObject.GetComponent<Animator>().SetBool("kick", false);
             this.gameObject.GetComponent<Animator>().SetBool("punch", false);
-            myText = "";
-           
+
         }
     }
 
@@ -121,24 +123,33 @@ public class attackSystem : MonoBehaviour
         if (collision.tag == otherPlayer.ToString())
         {
                 
-            Debug.Log("PLAYER : " + this.gameObject.tag + " DMG TAKEN : " + dmg);
-
             if (!collision.GetComponent<attackSystem>().blocked)
             {
                 collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
                 collision.GetComponent<playerMove>().knockback(this.transform);
+              
+                this.dmg = 0f;
+               // triggerOn = false;
 
             }
-            else if (collision.GetComponent<attackSystem>().blocked && (collision.transform.localScale.x + this.transform.localScale.x != 0) )
+            else 
             {
-                collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
-                collision.GetComponent<playerMove>().knockback(this.transform);
+                if (collision.transform.localScale.x + this.transform.localScale.x != 0)
+                {
+                    collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
+                    collision.GetComponent<playerMove>().knockback(this.transform);
+                    this.dmg = 0f;
+                  //  triggerOn = false;
+                }
             }
-            this.dmg = 0f;
-            triggerOn = false;
+
+            
+
+
+
         }
 
-       
+
     }
     
 }
