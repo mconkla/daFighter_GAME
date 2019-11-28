@@ -45,13 +45,13 @@ public class playerMove : MonoBehaviour
 
         Debug.Log(Input.GetAxis(horizontal));
 
-        if (Input.GetAxis(horizontal) > 0.5)
+        if (Input.GetAxis(horizontal) > 0.5   && !(this.gameObject.GetComponent<Animator>().GetBool("punch") || this.gameObject.GetComponent<Animator>().GetBool("kick") || this.gameObject.GetComponent<Animator>().GetBool("punch")))
         {
+
+            
+
             this.gameObject.GetComponent<Animator>().SetBool("walk", true);
-            this.gameObject.GetComponent<Animator>().SetBool("kick", false);
-            this.gameObject.GetComponent<Animator>().SetBool("punch", false);
-            this.gameObject.GetComponent<Animator>().SetBool("crouch", false);
-            this.gameObject.GetComponent<Animator>().SetBool("block", false);
+        
             //Debug.Log(Input.GetAxis(horizontal).ToString());
 
             if (!myAttackSystem.blocked) {
@@ -63,7 +63,7 @@ public class playerMove : MonoBehaviour
            // rb.AddForce(new Vector2(speed, 0));
             this.gameObject.transform.localScale = new Vector3(1 * Mathf.Abs(this.gameObject.transform.localScale.y), this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
         }
-        else if (Input.GetAxis(horizontal) < -0.5)
+        else if (Input.GetAxis(horizontal) < -0.5 && !(this.gameObject.GetComponent<Animator>().GetBool("punch") || this.gameObject.GetComponent<Animator>().GetBool("kick") || this.gameObject.GetComponent<Animator>().GetBool("punch")))
         {
             this.gameObject.GetComponent<Animator>().SetBool("walk", true);
             this.gameObject.GetComponent<Animator>().SetBool("kick", false);

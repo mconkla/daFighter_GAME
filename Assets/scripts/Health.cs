@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
 
     [HideInInspector]
     public bool dead = false;
+
+    public CameraScript mainCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,11 @@ public class Health : MonoBehaviour
         if (sprite.size.x > 0 + attackDamage)
         {
             sprite.size += new Vector2(-attackDamage, 0);
+
+            if(attackDamage > 0)
+            {
+                mainCam.TriggerShake();
+            }
         }
 
         else
