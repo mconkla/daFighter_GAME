@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 36b0c9fdf4fd7344db27d62476e775ed
+guid: 4125b8c8cb20c0f47a87b69d22d8127f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7517330965138955395
-    second: borderlineGirl_Walk_0
+      213: 7061414061336571254
+    second: borderlineGirl_crouch_0
   - first:
-      213: 893451068727703351
-    second: borderlineGirl_Walk_1
-  - first:
-      213: -6865677846737896988
-    second: borderlineGirl_Walk_2
-  - first:
-      213: 914904268807292481
-    second: borderlineGirl_Walk_3
-  - first:
-      213: -8230969240896287746
-    second: borderlineGirl_Walk_4
+      213: -7983834602657044368
+    second: borderlineGirl_crouch_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -101,76 +92,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: borderlineGirl_Walk_0
+      name: borderlineGirl_crouch_0
       rect:
         serializedVersion: 2
-        x: 228
-        y: 71
-        width: 644
-        height: 857
+        x: 138
+        y: 66
+        width: 607
+        height: 875
       alignment: 9
-      pivot: {x: 0.445516, y: 0.50255895}
+      pivot: {x: 0.3717497, y: 0.50000006}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50c6e8ff83555f44900c15303495d08
-      internalID: 7517330965138955395
+      spriteID: 803c0398a913b4a4cb5e489c26664177
+      internalID: 7061414061336571254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: borderlineGirl_Walk_1
+      name: borderlineGirl_crouch_1
       rect:
         serializedVersion: 2
-        x: 934
-        y: 61
-        width: 581
-        height: 865
-      alignment: 9
-      pivot: {x: 0.39808872, y: 0.50000006}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f30cbaaffa39d2469a818a0d98802cd
-      internalID: 893451068727703351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: borderlineGirl_Walk_2
-      rect:
-        serializedVersion: 2
-        x: 1546
-        y: 68
-        width: 649
-        height: 873
-      alignment: 9
-      pivot: {x: 0.43579873, y: 0.5050241}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b15b05dec8f0ae4bae999874d836059
-      internalID: -6865677846737896988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: borderlineGirl_Walk_3
-      rect:
-        serializedVersion: 2
-        x: 2251
-        y: 218
-        width: 6
-        height: 10
+        x: 898
+        y: 33
+        width: 607
+        height: 917
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,29 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 754445677d836a440a59f1dbc5332c78
-      internalID: 914904268807292481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: borderlineGirl_Walk_4
-      rect:
-        serializedVersion: 2
-        x: 2305
-        y: 55
-        width: 595
-        height: 886
-      alignment: 9
-      pivot: {x: 0.38942975, y: 0.51237583}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd98eac6c22bce34aa9b10134f95d7cb
-      internalID: -8230969240896287746
+      spriteID: 6826db617356db347bed01c334f44e4d
+      internalID: -7983834602657044368
       vertices: []
       indices: 
       edges: []

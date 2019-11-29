@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 36b0c9fdf4fd7344db27d62476e775ed
+guid: 0b9476b26fc2f9448954d7a73af7985f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7517330965138955395
-    second: borderlineGirl_Walk_0
+      213: 8473363661340989871
+    second: borderlineGirl_lightpunch_0
   - first:
-      213: 893451068727703351
-    second: borderlineGirl_Walk_1
+      213: -360585302345261159
+    second: borderlineGirl_lightpunch_5
   - first:
-      213: -6865677846737896988
-    second: borderlineGirl_Walk_2
-  - first:
-      213: 914904268807292481
-    second: borderlineGirl_Walk_3
-  - first:
-      213: -8230969240896287746
-    second: borderlineGirl_Walk_4
+      213: 4489079928420920714
+    second: borderlineGirl_lightpunch_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -101,106 +95,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: borderlineGirl_Walk_0
+      name: borderlineGirl_lightpunch_0
       rect:
         serializedVersion: 2
-        x: 228
-        y: 71
-        width: 644
-        height: 857
+        x: 135
+        y: 64
+        width: 801
+        height: 879
       alignment: 9
-      pivot: {x: 0.445516, y: 0.50255895}
+      pivot: {x: 0.28918892, y: 0.5099795}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f50c6e8ff83555f44900c15303495d08
-      internalID: 7517330965138955395
+      spriteID: 3d758a5627bc137489cab4aada548b7d
+      internalID: 8473363661340989871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: borderlineGirl_Walk_1
+      name: borderlineGirl_lightpunch_5
       rect:
         serializedVersion: 2
-        x: 934
-        y: 61
-        width: 581
-        height: 865
+        x: 1053
+        y: 64
+        width: 804
+        height: 879
       alignment: 9
-      pivot: {x: 0.39808872, y: 0.50000006}
+      pivot: {x: 0.2845204, y: 0.51247436}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f30cbaaffa39d2469a818a0d98802cd
-      internalID: 893451068727703351
+      spriteID: 045c1cc6a2beffa4eb63d9294522469d
+      internalID: -360585302345261159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: borderlineGirl_Walk_2
+      name: borderlineGirl_lightpunch_9
       rect:
         serializedVersion: 2
-        x: 1546
-        y: 68
-        width: 649
-        height: 873
+        x: 1933
+        y: 64
+        width: 808
+        height: 879
       alignment: 9
-      pivot: {x: 0.43579873, y: 0.5050241}
+      pivot: {x: 0.274731, y: 0.5099795}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b15b05dec8f0ae4bae999874d836059
-      internalID: -6865677846737896988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: borderlineGirl_Walk_3
-      rect:
-        serializedVersion: 2
-        x: 2251
-        y: 218
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 754445677d836a440a59f1dbc5332c78
-      internalID: 914904268807292481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: borderlineGirl_Walk_4
-      rect:
-        serializedVersion: 2
-        x: 2305
-        y: 55
-        width: 595
-        height: 886
-      alignment: 9
-      pivot: {x: 0.38942975, y: 0.51237583}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd98eac6c22bce34aa9b10134f95d7cb
-      internalID: -8230969240896287746
+      spriteID: eaf65570465093e4ea5655a506fa3951
+      internalID: 4489079928420920714
       vertices: []
       indices: 
       edges: []

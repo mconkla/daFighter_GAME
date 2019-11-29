@@ -7,6 +7,7 @@ TagManager:
   - 1
   - 2
   - floor
+  - me
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: player
+    uniqueID: 3010722275
     locked: 0
