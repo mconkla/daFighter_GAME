@@ -16,7 +16,7 @@ public class controllerInputs : MonoBehaviour
     public float heavyPunchState, heavyKickState = 0.0f;
 
     [HideInInspector]
-    public bool crouched,jump, grounded, blocked,grabbed = false;
+    public bool crouched,jump, grounded, blocked,crouchBlocked,grabbed = false;
 
     [HideInInspector]
     public bool heavyAttack,lightAttack = false;
@@ -243,19 +243,25 @@ public class controllerInputs : MonoBehaviour
             heavyKickState = 0;
         }
         //blocking
-        else if (Input.GetButton(blockInput))
+        else if (Input.GetButton(blockInput) && !crouched)
         {
             blocked = true;
             testText = "Blocking";
         }
+        else if (Input.GetButton(blockInput) && crouched)
+        {
+            crouchBlocked = true;
+            testText = "CrouchBlocking";
+        }
         else if (Input.GetButtonUp(blockInput))//on release
         {
             blocked = false;
+            crouchBlocked = false;
             testText = "Released Blocking";
         }
 
         //grabbing
-        else if (Input.GetButton(grabbInput))
+        else if (Input.GetButtonDown(grabbInput))
         {
             grabbed = true;
         }

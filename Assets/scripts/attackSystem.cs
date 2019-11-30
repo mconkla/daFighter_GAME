@@ -10,17 +10,18 @@ public class attackSystem : MonoBehaviour
     public string myText = "Hallo";
 
     private float DMG = 0;
+
     [Range(0.1f, 3f)]
     public float punchDMG = 1f;
+
     [Range(0.5f, 4.5f)]
     public float kickDMG = 2f;
 
 
     public Health healthBar;
 
-    
-   
-    private controllerInputs myControllerInputs;
+    [HideInInspector]
+    public controllerInputs myControllerInputs;
     private triggerColliderSystem myTriggerColliderSystem;
     private triggerScript currentTriggerScript;
 
@@ -35,6 +36,7 @@ public class attackSystem : MonoBehaviour
     void Update()
     {
         InputPlayer();
+
     }
 
 
@@ -111,6 +113,12 @@ public class attackSystem : MonoBehaviour
             currentTriggerScript = myTriggerColliderSystem.heavyKickAirTrigger.GetComponent<triggerScript>();
             DMG = punchDMG;
             myText = "heavyKick Air" + myControllerInputs.heavyKickState;
+        }
+        else if (myControllerInputs.grabbed)
+        {
+            currentTriggerScript = myTriggerColliderSystem.grabbTrigger.GetComponent<triggerScript>();
+            DMG = 0;
+            
         }
 
         if (currentTriggerScript != null)
