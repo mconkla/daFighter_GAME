@@ -1,28 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class attackSystem : MonoBehaviour
 {
-    
-    [HideInInspector]
-    public string myText = "Hallo";
+    public Health healthBar;
 
-    private float DMG = 0;
+    [Range(0f, 2f)]
+    public float delayToHit = 0.2f;
     [Range(0.1f, 3f)]
     public float punchDMG = 1f;
     [Range(0.5f, 4.5f)]
     public float kickDMG = 2f;
 
+    [HideInInspector]
+    public string myText = "Hallo";
 
-    public Health healthBar;
-
-    
-   
-    private controllerInputs myControllerInputs;
-    private triggerColliderSystem myTriggerColliderSystem;
-    private triggerScript currentTriggerScript;
+    private float DMG = 0;
+    private controllerInputs        myControllerInputs;
+    private triggerColliderSystem   myTriggerColliderSystem;
+    private triggerScript           currentTriggerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -44,38 +44,40 @@ public class attackSystem : MonoBehaviour
         {
             currentTriggerScript = myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>();
             DMG = punchDMG;
-            myText = "lightPunchNormal : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
+            myText = "lightPunchNormal : " + currentTriggerScript.dmg;
         }
         else if (myControllerInputs.lightPunchCrouched)
         {
             currentTriggerScript = myTriggerColliderSystem.lightPunchCrouchTrigger.GetComponent<triggerScript>();
             DMG = punchDMG;
-            myText = "lightPunchCrouched : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
+            myText = "lightPunchCrouched : " + currentTriggerScript.dmg;
         }
         else if (myControllerInputs.lightPunchAir)
         {
             currentTriggerScript = myTriggerColliderSystem.lightPunchAirTrigger.GetComponent<triggerScript>();
             DMG = punchDMG;
-            myText = "lightPunchAir : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
+            myText = "lightPunchAir : " + currentTriggerScript.dmg;
         }
         else if (myControllerInputs.lightKickNormal)
         {
             currentTriggerScript = myTriggerColliderSystem.lightKickNormalTrigger.GetComponent<triggerScript>();
             DMG = kickDMG;
-            myText = "lightKickNormal : " + myTriggerColliderSystem.lightKickNormalTrigger.GetComponent<triggerScript>().dmg;
+            myText = "lightKickNormal : " + currentTriggerScript.dmg;
         }
         else if (myControllerInputs.lightKickCrouched)
         {
             currentTriggerScript = myTriggerColliderSystem.lightKickCrouchTrigger.GetComponent<triggerScript>();
             DMG = punchDMG;
-            myText = "lightKickCrouched : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
+            myText = "lightKickCrouched : " + currentTriggerScript.dmg;
         }
         else if (myControllerInputs.lightKickAir)
         {
             currentTriggerScript = myTriggerColliderSystem.lightKickAirTrigger.GetComponent<triggerScript>();
             DMG = punchDMG;
-            myText = "lightKickAir : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
+            myText = "lightKickAir : " + currentTriggerScript.dmg;
         }
+
+
         else if (myControllerInputs.heavyPunchNormal)
         {
             currentTriggerScript = myTriggerColliderSystem.heavyPunchNormalTrigger.GetComponent<triggerScript>();
@@ -116,7 +118,7 @@ public class attackSystem : MonoBehaviour
         if (currentTriggerScript != null)
         {
             currentTriggerScript.timeStamp = Time.time;
-            currentTriggerScript.triggerOn = true;
+            spawnTriggerDelayed(currentTriggerScript);
             currentTriggerScript.dmg = DMG;
             currentTriggerScript = null;
         }
@@ -124,6 +126,14 @@ public class attackSystem : MonoBehaviour
         if (myControllerInputs.blocked)
         {
             myText = "BLOCKING : ";
+        }
+
+        async void spawnTriggerDelayed(triggerScript currentTriggerScript)
+        {
+            Debug.Log("Waiting");
+            await Task.Delay(TimeSpan.FromSeconds(delayToHit));
+            currentTriggerScript.triggerOn = true;
+            Debug.Log("Done!");
         }
     }
 }
