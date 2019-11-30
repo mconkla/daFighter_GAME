@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class attackSystem : MonoBehaviour
 {
+
     public Health healthBar;
     //Light Punch
     [Range(0.1f, 3f)]
@@ -73,11 +74,14 @@ public class attackSystem : MonoBehaviour
     [HideInInspector]
     public string myText = "Hallo";
 
+
     private float DMG = 0;
     private float delayToHit = 0.2f;
-    private controllerInputs        myControllerInputs;
+    [HideInInspector]
+    public controllerInputs myControllerInputs;
     private triggerColliderSystem   myTriggerColliderSystem;
     private triggerScript           currentTriggerScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +94,7 @@ public class attackSystem : MonoBehaviour
     void Update()
     {
         InputPlayer();
+
     }
 
 
@@ -179,6 +184,12 @@ public class attackSystem : MonoBehaviour
             DMG = DMGHeavyKickAir;
             delayToHit = delayToHitHeavyKickAir;
             myText = "heavyKick Air" + myControllerInputs.heavyKickState;
+        }
+        else if (myControllerInputs.grabbed)
+        {
+            currentTriggerScript = myTriggerColliderSystem.grabbTrigger.GetComponent<triggerScript>();
+            DMG = 0;
+            
         }
 
         if (currentTriggerScript != null)

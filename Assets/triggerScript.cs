@@ -11,15 +11,13 @@ public class triggerScript : MonoBehaviour
     public bool triggerOn = false;
     [HideInInspector]
     public float dmg = 0f;
-    //test:
 
+    private triggerColliderSystem myTriggerSystem;
 
-    private int otherPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        otherPlayer = this.gameObject.GetComponentInParent<triggerColliderSystem>().otherPlayer;
-        
+        myTriggerSystem = this.gameObject.GetComponentInParent<triggerColliderSystem>();        
     }
 
     // Update is called once per frame
@@ -33,25 +31,65 @@ public class triggerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.tag == otherPlayer.ToString())
+        if (collision.tag == myTriggerSystem.otherPlayer.ToString())
         {
-            if (!collision.GetComponent<controllerInputs>().blocked)
+            if (!myTriggerSystem.crouched)
             {
-                collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
-                collision.GetComponent<playerMove>().knockback(this.transform);
 
-                this.dmg = 0f;
+                if (!collision.GetComponent<controllerInputs>().blocked)
+                {
+                    if (this.dmg == 0)
+                    {
+                        collision.GetComponent<playerMove>().grabbed(this.transform);
+                    }
+                    else if (this.dmg > 0)
+                    {
+                        collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
+                        collision.GetComponent<playerMove>().knockback(this.transform);
+                    }
+                }
+                else
+                {
+                    if (Mathf.Sign(collision.transform.localScale.x) + Mathf.Sign(myTriggerSystem.localScale) != 0)
+                    {
+                        if (this.dmg == 0)
+                        {
+                            collision.GetComponent<playerMove>().grabbed(this.transform);
+                        }
+                        else if (this.dmg > 0)
+                        {
+                            collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
+                            collision.GetComponent<playerMove>().knockback(this.transform);
+                        }
+                    }
+
+                }
+
             }
             else
             {
-                if (Mathf.Sign(collision.transform.localScale.x) + Mathf.Sign(this.transform.localScale.x) != 0)
+                if (!collision.GetComponent<controllerInputs>().crouchBlocked)
                 {
-                    collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
-                    collision.GetComponent<playerMove>().knockback(this.transform);
-                    this.dmg = 0f;
+                    if (this.dmg > 0)
+                    {
+                        collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
+                        collision.GetComponent<playerMove>().knockback(this.transform);
+                    }
+                }
+                else
+                {
+                    if (Mathf.Sign(collision.transform.localScale.x) + Mathf.Sign(myTriggerSystem.localScale) != 0)
+                    {
+                        if (this.dmg > 0)
+                        {
+                            collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
+                            collision.GetComponent<playerMove>().knockback(this.transform);
+                        }
+                    }
 
                 }
             }
+            
         }
     }
 
