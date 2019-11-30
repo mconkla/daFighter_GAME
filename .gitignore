@@ -33,7 +33,6 @@ ExportedObj/
 *.VC.db
 
 # Builds
-*.apk
 *.unitypackage
 
 # Crashlytics generated file
