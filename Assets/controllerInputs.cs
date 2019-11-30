@@ -10,7 +10,7 @@ public class controllerInputs : MonoBehaviour
     [HideInInspector]
     public string horizontal, vertical = "";
     [HideInInspector]
-    public string punchInput, kickInput, blockInput, heavyPunch, heavyKick = "";
+    public string punchInput, kickInput, blockInput, heavyPunch, heavyKick,grabbInput = "";
 
     [HideInInspector]
     public float heavyPunchState, heavyKickState = 0.0f;
@@ -43,6 +43,7 @@ public class controllerInputs : MonoBehaviour
         heavyKick = "Fire3" + this.gameObject.tag.ToString();
         heavyPunch = "Fire4" + this.gameObject.tag.ToString();
         blockInput = "Bumper" + this.gameObject.tag.ToString();
+        grabbInput = "Grabb" + this.gameObject.tag.ToString();
     }
 
     // Update is called once per frame
@@ -131,41 +132,41 @@ public class controllerInputs : MonoBehaviour
         else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && grounded)
         {
             heavyPunchState += (1f * Time.fixedDeltaTime);
-            heavyPunchNormal = true;
             if (heavyPunchState > 1)
             {
                 heavyPunchState = -1;
                 testText = "Standing HP";
-                heavyPunchNormal = false;
+                heavyPunchNormal = true;
             }
         }
         else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && crouched && grounded)
         {
             heavyPunchState += (1f * Time.fixedDeltaTime);
-            heavyPunchCrouched = true;
             if (heavyPunchState > 1)
             {
                 heavyPunchState = -1;
                 testText = "Crouching HP";
-                heavyPunchCrouched = false;
+                heavyPunchCrouched = true;
             }
         }
         else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && !grounded)
         {
             heavyPunchState += (1f * Time.fixedDeltaTime);
-            heavyPunchAir = true;
             if (heavyPunchState > 1)
             {
                 heavyPunchState = -1;
                 testText = "Air HP";
-                heavyPunchAir = false;
+                heavyPunchAir = true;
             }
         }
         else if (Input.GetButtonUp(heavyPunch) && !blocked)//on release
         {
             if (heavyPunchState != -1)
             {
-                if(heavyPunchNormal)
+                heavyPunchNormal = true;
+                heavyPunchCrouched = true;
+                heavyPunchAir = true;
+                if (heavyPunchNormal)
                 {
                     testText = "Standing HP";
                    
@@ -183,9 +184,7 @@ public class controllerInputs : MonoBehaviour
             }
             heavyPunchState = 0;
 
-            heavyPunchNormal = false;
-            heavyPunchCrouched = false;
-            heavyPunchAir = false;
+            
         }
 
 
@@ -193,37 +192,40 @@ public class controllerInputs : MonoBehaviour
         else if (Input.GetButton(heavyKick) && heavyKickState >= 0 && !blocked && !crouched && grounded)
         {
             heavyKickState += (1f * Time.fixedDeltaTime);
-            heavyKickNormal = true;
             if (heavyKickState > 1)
             {
                 heavyKickState = -1;
                 testText = "Standing HK";
+                heavyKickNormal = true;
             }
         }
         else if (Input.GetButton(heavyKick) && heavyKickState >= 0 && !blocked && crouched && grounded)
         {
             heavyKickState += (1f * Time.fixedDeltaTime);
-            heavyKickCrouched = true;
             if (heavyKickState > 1)
             {
                 heavyKickState = -1;
                 testText = "Crouching HK";
+                heavyKickCrouched = true;
             }
         }
         else if (Input.GetButton(heavyKick) && heavyKickState >= 0 && !blocked && !crouched && !grounded)
         {
             heavyKickState += (1f * Time.fixedDeltaTime);
-            heavyKickAir = true;
             if (heavyKickState > 1)
             {
                 heavyKickState = -1;
                 testText = "Air HK";
+                heavyKickAir = true;
             }
         }
         else if (Input.GetButtonUp(heavyKick) && !blocked)//on release
         {
             if (heavyKickState != -1)
             {
+                heavyKickNormal = true;
+                heavyKickCrouched = true;
+                heavyKickAir = true;
                 if (heavyKickNormal)
                 {
                     testText = "Standing HK";
@@ -237,11 +239,10 @@ public class controllerInputs : MonoBehaviour
                     testText = "Air HK";
                 }
             }
-            heavyKickNormal = false;
-            heavyKickCrouched = false;
-            heavyKickAir = false;
+            
             heavyKickState = 0;
         }
+        //blocking
         else if (Input.GetButton(blockInput))
         {
             blocked = true;
@@ -252,6 +253,13 @@ public class controllerInputs : MonoBehaviour
             blocked = false;
             testText = "Released Blocking";
         }
+
+        //grabbing
+        else if (Input.GetButton(grabbInput))
+        {
+            grabbed = true;
+        }
+        //reset attacks
         else
         {
             lightPunchNormal = false;
@@ -261,6 +269,16 @@ public class controllerInputs : MonoBehaviour
             lightKickNormal = false;
             lightKickCrouched = false;
             lightKickAir = false;
+
+            heavyPunchNormal = false;
+            heavyPunchCrouched = false;
+            heavyPunchAir = false;
+
+            heavyKickNormal = false;
+            heavyKickCrouched = false;
+            heavyKickAir = false;
+
+            grabbed = false;
 
         }
     }

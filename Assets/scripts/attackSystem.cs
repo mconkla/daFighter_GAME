@@ -48,10 +48,14 @@ public class attackSystem : MonoBehaviour
         }
         else if (myControllerInputs.lightPunchCrouched)
         {
+            currentTriggerScript = myTriggerColliderSystem.lightPunchCrouchTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "lightPunchCrouched : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
         }
         else if (myControllerInputs.lightPunchAir)
         {
+            currentTriggerScript = myTriggerColliderSystem.lightPunchAirTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "lightPunchAir : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
         }
         else if (myControllerInputs.lightKickNormal)
@@ -62,34 +66,50 @@ public class attackSystem : MonoBehaviour
         }
         else if (myControllerInputs.lightKickCrouched)
         {
+            currentTriggerScript = myTriggerColliderSystem.lightKickCrouchTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "lightKickCrouched : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
         }
         else if (myControllerInputs.lightKickAir)
         {
+            currentTriggerScript = myTriggerColliderSystem.lightKickAirTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "lightKickAir : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
         }
         else if (myControllerInputs.heavyPunchNormal)
         {
+            currentTriggerScript = myTriggerColliderSystem.heavyPunchNormalTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "heavyPunching Normal" + myControllerInputs.heavyPunchState;
         }
         else if (myControllerInputs.heavyPunchCrouched)
         {
+            currentTriggerScript = myTriggerColliderSystem.heavyPunchCrouchTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "heavyPunching Crouched" + myControllerInputs.heavyPunchState;
         }
         else if (myControllerInputs.heavyPunchAir)
         {
+            currentTriggerScript = myTriggerColliderSystem.heavyPunchAirTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "heavyPunching Air" + myControllerInputs.heavyPunchState;
         }
         else if (myControllerInputs.heavyKickNormal)
         {
+            currentTriggerScript = myTriggerColliderSystem.heavyKickNormalTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "heavyKick Normal" + myControllerInputs.heavyKickState;
         }
         else if (myControllerInputs.heavyKickCrouched)
         {
+            currentTriggerScript = myTriggerColliderSystem.heavyKickCrouchTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "heavyKick Crouched" + myControllerInputs.heavyKickState;
         }
         else if (myControllerInputs.heavyKickAir)
         {
+            currentTriggerScript = myTriggerColliderSystem.heavyKickAirTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "heavyKick Air" + myControllerInputs.heavyKickState;
         }
 
