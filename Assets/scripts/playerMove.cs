@@ -78,5 +78,9 @@ public class playerMove : MonoBehaviour
         rb.AddForce(moveDirection.normalized * 150f);
         
     }
+    public void grabbed(Transform enemy)
+    {
+        this.transform.position =new Vector2(this.transform.position.x, this.transform.position.y +1);
+    }
 
 }
