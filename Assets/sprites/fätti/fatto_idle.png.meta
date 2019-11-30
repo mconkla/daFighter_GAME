@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 6a836b6eaba709f4a835abc5395e01e4
+guid: ff4f632214cc2e94ca5f8906b08ad3dd
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -5855621819526446378
-    second: player_crouch_0
-  - first:
-      213: -7810421126686684063
-    second: player_crouch_1
-  - first:
-      213: 3023615902990441322
-    second: player_crouch_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +31,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -49,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -79,63 +70,9 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: player_crouch_0
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 67
-        width: 399
-        height: 813
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec12d30636a1c874fb5780c5d30d697b
-      internalID: -5855621819526446378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_crouch_1
-      rect:
-        serializedVersion: 2
-        x: 606
-        y: 62
-        width: 543
-        height: 822
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a472bd0019c6c6d49ac6f327b1cb279e
-      internalID: -7810421126686684063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
