@@ -16,11 +16,13 @@ public class controllerInputs : MonoBehaviour
     public float heavyPunchState, heavyKickState = 0.0f;
 
     [HideInInspector]
-    public bool crouched,jump, grounded, blocked = false;
+    public bool crouched,jump, grounded, blocked,grabbed = false;
 
     [HideInInspector]
     public bool heavyAttack,lightAttack = false;
 
+    [HideInInspector]
+    public int staggerd = 0;
 
     [HideInInspector]
     public bool walkLeft, walkRight, lightPunchNormal,lightPunchCrouched,lightPunchAir,lightKickNormal,lightKickCrouched,lightKickAir,

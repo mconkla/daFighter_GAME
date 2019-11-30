@@ -8,6 +8,8 @@ public class attackSystem : MonoBehaviour
     
     [HideInInspector]
     public string myText = "Hallo";
+
+    private float DMG = 0;
     [Range(0.1f, 3f)]
     public float punchDMG = 1f;
     [Range(0.5f, 4.5f)]
@@ -20,6 +22,7 @@ public class attackSystem : MonoBehaviour
    
     private controllerInputs myControllerInputs;
     private triggerColliderSystem myTriggerColliderSystem;
+    private triggerScript currentTriggerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +42,8 @@ public class attackSystem : MonoBehaviour
     {
         if (myControllerInputs.lightPunchNormal)
         {
-            myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().timeStamp = Time.time;
-            myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().triggerOn = true;
-            myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg = punchDMG;
+            currentTriggerScript = myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>();
+            DMG = punchDMG;
             myText = "lightPunchNormal : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
         }
         else if (myControllerInputs.lightPunchCrouched)
@@ -54,10 +56,9 @@ public class attackSystem : MonoBehaviour
         }
         else if (myControllerInputs.lightKickNormal)
         {
-            myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().timeStamp = Time.time;
-            myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().triggerOn = true;
-            myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg = kickDMG;
-            myText = "lightKickNormal : " + myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>().dmg;
+            currentTriggerScript = myTriggerColliderSystem.lightKickNormalTrigger.GetComponent<triggerScript>();
+            DMG = kickDMG;
+            myText = "lightKickNormal : " + myTriggerColliderSystem.lightKickNormalTrigger.GetComponent<triggerScript>().dmg;
         }
         else if (myControllerInputs.lightKickCrouched)
         {
@@ -91,6 +92,15 @@ public class attackSystem : MonoBehaviour
         {
             myText = "heavyKick Air" + myControllerInputs.heavyKickState;
         }
+
+        if (currentTriggerScript != null)
+        {
+            currentTriggerScript.timeStamp = Time.time;
+            currentTriggerScript.triggerOn = true;
+            currentTriggerScript.dmg = DMG;
+            currentTriggerScript = null;
+        }
+
         if (myControllerInputs.blocked)
         {
             myText = "BLOCKING : ";

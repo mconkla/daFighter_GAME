@@ -769,27 +769,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.11015606, y: 0.9008575}
   m_EdgeRadius: 0
---- !u!1 &881265200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1217587000887663410, guid: 03c9056c28a8da640b9904e729b4ad05,
-    type: 3}
-  m_PrefabInstance: {fileID: 1989814336}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &881265204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881265200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f37658ce9abdc5f459a24415d0df4790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStamp: 0
-  triggerOn: 0
-  dmg: 0
 --- !u!1 &1155111285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1400,11 @@ PrefabInstance:
       propertyPath: kickDMG
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1217587000887663410, guid: 03c9056c28a8da640b9904e729b4ad05,
+        type: 3}
+      propertyPath: m_TagString
+      value: me
+      objectReference: {fileID: 0}
     - target: {fileID: 2452647010029546400, guid: 03c9056c28a8da640b9904e729b4ad05,
         type: 3}
       propertyPath: m_Enabled
@@ -1465,7 +1449,17 @@ PrefabInstance:
     - target: {fileID: 2452647010029546402, guid: 03c9056c28a8da640b9904e729b4ad05,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452647010029546402, guid: 03c9056c28a8da640b9904e729b4ad05,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1284245021
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452647010029546402, guid: 03c9056c28a8da640b9904e729b4ad05,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2452647010029546407, guid: 03c9056c28a8da640b9904e729b4ad05,
         type: 3}
@@ -1547,6 +1541,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7734934502593542564, guid: 03c9056c28a8da640b9904e729b4ad05,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2452647010029546401, guid: 03c9056c28a8da640b9904e729b4ad05,
         type: 3}
       propertyPath: m_Constraints
@@ -1556,11 +1555,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1217587000887663410, guid: 03c9056c28a8da640b9904e729b4ad05,
-        type: 3}
-      propertyPath: m_TagString
-      value: me
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03c9056c28a8da640b9904e729b4ad05, type: 3}
@@ -1621,6 +1615,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "player_1_f\xE4tti"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452647010029546335, guid: 03c9056c28a8da640b9904e729b4ad05,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2452647010029546405, guid: 03c9056c28a8da640b9904e729b4ad05,
         type: 3}

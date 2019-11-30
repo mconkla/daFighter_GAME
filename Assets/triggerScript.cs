@@ -26,7 +26,6 @@ public class triggerScript : MonoBehaviour
     {
 
         this.gameObject.GetComponent<BoxCollider2D>().enabled = triggerOn;
-        Debug.Log(this.triggerOn);
         setTriggerFalse();
     }
 
@@ -35,15 +34,12 @@ public class triggerScript : MonoBehaviour
         
         if (collision.tag == otherPlayer.ToString())
         {
-           
             if (!collision.GetComponent<controllerInputs>().blocked)
             {
                 collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
                 collision.GetComponent<playerMove>().knockback(this.transform);
 
                 this.dmg = 0f;
-
-
             }
             else
             {

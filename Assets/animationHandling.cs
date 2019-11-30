@@ -28,6 +28,8 @@ public class animationHandling : MonoBehaviour
        
         myAnimator.SetBool("walk", (myControllerInputs.walkRight || myControllerInputs.walkLeft));
         myAnimator.SetBool("crouch", myControllerInputs.crouched);
+
+        //kann weg
         myAnimator.SetBool("grounded", myControllerInputs.grounded);
 
         //jump toDo

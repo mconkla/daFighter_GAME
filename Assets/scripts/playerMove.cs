@@ -14,7 +14,6 @@ public class playerMove : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
     private float direction = 1;
 
-    attackSystem myAttackSystem;
     controllerInputs myControllerInputs;
 
   
@@ -22,7 +21,6 @@ public class playerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        myAttackSystem = this.gameObject.GetComponent<attackSystem>();
         myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
     }
 
@@ -74,11 +72,11 @@ public class playerMove : MonoBehaviour
 
     public void knockback(Transform enemy)
     {
-        /*
+        
         Vector2 moveDirection;
         moveDirection = this.transform.position - enemy.transform.position;
         rb.AddForce(moveDirection.normalized * 150f);
-        */
+        
     }
 
 }
