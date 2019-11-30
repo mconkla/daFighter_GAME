@@ -6,6 +6,7 @@ public class animationHandling : MonoBehaviour
 {
 
     Animator myAnimator;
+    Animator effektAnimator;
     controllerInputs myControllerInputs;
 
     // Start is called before the first frame update
@@ -13,6 +14,7 @@ public class animationHandling : MonoBehaviour
     {
         myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
         myAnimator = this.gameObject.GetComponent<Animator>();
+        effektAnimator = this.transform.GetChild(1).GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,6 +68,50 @@ public class animationHandling : MonoBehaviour
 
     void checkHeavyAttacks()
     {
+
+       
+        if (myControllerInputs.heavyPunchState > 0.1)
+        {
+            myAnimator.Play("player_big_heavypunch_load");
+            effektAnimator.Play("player_big_heavypunch_load_effekt");
+            effektAnimator.GetComponent<SpriteRenderer>().color = new Color(effektAnimator.GetComponent<SpriteRenderer>().color.r, effektAnimator.GetComponent<SpriteRenderer>().color.g, effektAnimator.GetComponent<SpriteRenderer>().color.b, Mathf.Abs(myControllerInputs.heavyPunchState));
+
+           
+
+
+
+
+        }
+        else if(myControllerInputs.heavyPunchState == -0.2f)
+        {
+            effektAnimator.GetComponent<SpriteRenderer>().color = new Color(effektAnimator.GetComponent<SpriteRenderer>().color.r, effektAnimator.GetComponent<SpriteRenderer>().color.g, effektAnimator.GetComponent<SpriteRenderer>().color.b, 0);
+
+        }
+        /* if (myControllerInputs.heavyPunchNormal)
+         {
+             myAnimator.Play("player_big_heavypunch_exit");
+             effektAnimator.Play("player_big_heavypunch_exit_effekt");
+
+         }
+         */
+        if (Mathf.Abs(myControllerInputs.dmgMultiplyer) <= 1f && Mathf.Abs(myControllerInputs.dmgMultiplyer) > 0.95f && myControllerInputs.heavyPunchNormal)
+        {
+            myAnimator.Play("player_big_heavypunch_exit");
+            effektAnimator.Play("player_big_heavypunch_exit_effekt_perfekt");
+        }
+        else if (Mathf.Abs(myControllerInputs.dmgMultiplyer) > 1f || Mathf.Abs(myControllerInputs.dmgMultiplyer) <= 0.95f && myControllerInputs.heavyPunchNormal)
+        {
+            myAnimator.Play("player_big_heavypunch_exit");
+            effektAnimator.Play("player_big_heavypunch_exit_effekt");
+        }
+        myAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
+        effektAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
+
+     
+       
+        
+
+
 
     }
 

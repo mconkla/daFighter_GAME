@@ -28,6 +28,8 @@ public class controllerInputs : MonoBehaviour
     public bool walkLeft, walkRight, lightPunchNormal,lightPunchCrouched,lightPunchAir,lightKickNormal,lightKickCrouched,lightKickAir,
         heavyPunchNormal,heavyPunchCrouched,heavyPunchAir,heavyKickNormal,heavyKickCrouched,heavyKickAir= false;
 
+    [HideInInspector]
+    public float dmgMultiplyer = 1;
 
     // Start is called before the first frame update
 
@@ -129,14 +131,16 @@ public class controllerInputs : MonoBehaviour
         }
 
         //heavy Punches
-        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && grounded)
+        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && grounded )
         {
             heavyPunchState += (1f * Time.fixedDeltaTime);
-            if (heavyPunchState > 1)
+            if (heavyPunchState > 1.0f)
             {
-                heavyPunchState = -1;
+
+                heavyPunchState = -0.2f;
                 testText = "Standing HP";
                 heavyPunchNormal = true;
+                dmgMultiplyer = heavyPunchState;
             }
         }
         else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && crouched && grounded)
@@ -144,7 +148,7 @@ public class controllerInputs : MonoBehaviour
             heavyPunchState += (1f * Time.fixedDeltaTime);
             if (heavyPunchState > 1)
             {
-                heavyPunchState = -1;
+                heavyPunchState = -0.2f;
                 testText = "Crouching HP";
                 heavyPunchCrouched = true;
             }
@@ -161,13 +165,14 @@ public class controllerInputs : MonoBehaviour
         }
         else if (Input.GetButtonUp(heavyPunch) && !blocked)//on release
         {
-            if (heavyPunchState != -1)
+            if (heavyPunchState != -0.2f)
             {
                 heavyPunchNormal = true;
                 heavyPunchCrouched = true;
                 heavyPunchAir = true;
                 if (heavyPunchNormal)
                 {
+                    
                     testText = "Standing HP";
                    
                 }
@@ -181,10 +186,10 @@ public class controllerInputs : MonoBehaviour
                     testText = "Air HP";
                     
                 }
-            }
-            heavyPunchState = 0;
 
-            
+            }
+            dmgMultiplyer = heavyPunchState;
+            heavyPunchState = 0;
         }
 
 
@@ -239,7 +244,7 @@ public class controllerInputs : MonoBehaviour
                     testText = "Air HK";
                 }
             }
-            
+            dmgMultiplyer = heavyPunchState;
             heavyKickState = 0;
         }
         //blocking
@@ -284,6 +289,7 @@ public class controllerInputs : MonoBehaviour
             heavyKickCrouched = false;
             heavyKickAir = false;
 
+            
             grabbed = false;
 
         }

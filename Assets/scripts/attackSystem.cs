@@ -146,9 +146,9 @@ public class attackSystem : MonoBehaviour
         else if (myControllerInputs.heavyPunchNormal)
         {
             currentTriggerScript = myTriggerColliderSystem.heavyPunchNormalTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyPunchNormal;
+            DMG = DMGHeavyPunchNormal * Mathf.Abs(myControllerInputs.dmgMultiplyer);
             delayToHit = delayToHitHeavyPunchNormal;
-            myText = "heavyPunching Normal" + myControllerInputs.heavyPunchState;
+            myText = "heavyPunching Normal" + (DMG/ DMGHeavyPunchNormal) *100  + " % ";
         }
         else if (myControllerInputs.heavyPunchCrouched)
         {
