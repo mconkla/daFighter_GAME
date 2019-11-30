@@ -8,6 +8,9 @@
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
 
+#add github meta files to be ignored
+Assets/Plugins/GitHub/Editor/
+
 # Visual Studio cache directory
 .vs/
 
@@ -32,8 +35,16 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# Unity3D generated meta files
+#*.pidb.meta
+#*.pdb.meta
+#*.mdb.meta
+
+# Unity3D generated file on crash reports
+sysinfo.txt
+
+
 # Builds
-*.apk
 *.unitypackage
 
 # Crashlytics generated file
