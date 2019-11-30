@@ -11,6 +11,7 @@ public class triggerScript : MonoBehaviour
     public bool triggerOn = false;
     [HideInInspector]
     public float dmg = 0f;
+    //test:
 
 
     private int otherPlayer;
