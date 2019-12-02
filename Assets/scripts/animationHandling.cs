@@ -107,9 +107,10 @@ public class animationHandling : MonoBehaviour
         myAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
         effektAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
 
-     
-       
-        
+        myAnimator.SetBool("block", myControllerInputs.blocked);
+
+
+
 
 
 

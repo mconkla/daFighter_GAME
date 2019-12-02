@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class launch : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class launch : MonoBehaviour
     public void launchDual()
     {
 
-
+        SceneManager.LoadScene("Characterselect");
 
     }
 

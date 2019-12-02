@@ -12,16 +12,21 @@ public class playerMove : MonoBehaviour
 
     private float m_MovementSmoothing = .05f;
     private Vector3 m_Velocity = Vector3.zero;
-    private float direction = 1;
+
+    private Transform otherPlayer;
 
     controllerInputs myControllerInputs;
+
 
   
 
     // Use this for initialization
     void Start()
     {
+        
         myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
+        otherPlayer = FindObjectsOfType<playerMove>()[(this.gameObject.tag == "1" ? 2 : 1) - 1].gameObject.transform;
+       
     }
 
     // Update is called once per frame
@@ -29,6 +34,8 @@ public class playerMove : MonoBehaviour
     {
         controlHorizontal();
         controlVertical();
+        
+
     }
 
     void controlHorizontal()
@@ -38,18 +45,17 @@ public class playerMove : MonoBehaviour
         {
             Vector3 targetVelocity = new Vector2(speed * 0.10f, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-            direction = 1;
-            
+            checkLookDir();
+
         }
-        else if (myControllerInputs.walkLeft)
+        if (myControllerInputs.walkLeft)
         {
             Vector3 targetVelocity = new Vector2(-speed * 0.10f, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-            direction = -1;
+            checkLookDir();
         }
 
-        this.gameObject.transform.localScale = new Vector3(direction * Mathf.Abs(this.gameObject.transform.localScale.y), this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
-
+        
     }
 
     void controlVertical() { 
@@ -83,4 +89,19 @@ public class playerMove : MonoBehaviour
         this.transform.position =new Vector2(this.transform.position.x, this.transform.position.y +1);
     }
 
+    void checkLookDir()
+    {
+
+        if (this.transform.position.x > otherPlayer.position.x)
+        {
+            this.gameObject.transform.localScale = new Vector3(-1 * Mathf.Abs(this.gameObject.transform.localScale.x), this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+
+        }
+        else
+        {
+            this.gameObject.transform.localScale = new Vector3(1 * Mathf.Abs(this.gameObject.transform.localScale.x), this.gameObject.transform.localScale.y, this.gameObject.transform.localScale.z);
+
+        }
+
+    }
 }

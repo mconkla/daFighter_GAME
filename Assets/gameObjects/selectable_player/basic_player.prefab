@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 2452647010029546406}
   - component: {fileID: 7201763586188452295}
   - component: {fileID: 6701059590000973476}
+  - component: {fileID: 4522424931611733649}
   m_Layer: 0
   m_Name: basic_player
   m_TagString: 1
@@ -750,6 +751,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ea9bb2d6f155341bd9b1cb7c4da31f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4522424931611733649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452647010029546335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4195c71248b891469cd258ac516fd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2909391664390758241
@@ -1105,7 +1118,7 @@ MonoBehaviour:
   lightKickAirTrigger: {fileID: 173516313589982174}
   heavyPunchAirTrigger: {fileID: 2909391664390758241}
   heavyKickAirTrigger: {fileID: 1525921201198281192}
-  grabbTrigger: {fileID: 4297832611787344464}
+  grabbTrigger: {fileID: 0}
   otherPlayer: 0
   parentObject: {fileID: 0}
   localScale: 0

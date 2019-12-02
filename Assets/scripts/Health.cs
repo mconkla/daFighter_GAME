@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [HideInInspector]
     public attackSystem player;
 
     [HideInInspector]
