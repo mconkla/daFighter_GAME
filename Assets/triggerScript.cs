@@ -30,16 +30,18 @@ public class triggerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+       bool spawnDamageIndicator = true; 
         if (collision.tag == myTriggerSystem.otherPlayer.ToString())
         {
             if (!myTriggerSystem.crouched)
             {
-
+                
                 if (!collision.GetComponent<controllerInputs>().blocked)
                 {
+                    //damage
                     if (this.dmg == 0)
                     {
+                        spawnDamageIndicator = false;
                         collision.GetComponent<playerMove>().grabbed(this.transform);
                     }
                     else if (this.dmg > 0)
@@ -58,6 +60,7 @@ public class triggerScript : MonoBehaviour
                         }
                         else if (this.dmg > 0)
                         {
+
                             collision.GetComponent<attackSystem>().healthBar.onHit(dmg);
                             collision.GetComponent<playerMove>().knockback(this.transform);
                         }
@@ -68,6 +71,7 @@ public class triggerScript : MonoBehaviour
             }
             else
             {
+                //blocked
                 if (!collision.GetComponent<controllerInputs>().crouchBlocked)
                 {
                     if (this.dmg > 0)
@@ -89,6 +93,13 @@ public class triggerScript : MonoBehaviour
 
                 }
             }
+            
+        }
+        if (spawnDamageIndicator == true)
+        {
+            
+            GameObject indicator = Instantiate(Resources.Load("DamageIndicator"), myTriggerSystem.GetComponentInParent<Transform>().position-collision.transform.position, Quaternion.identity) as GameObject;
+            indicator.GetComponent<DamageIndicators>.dmg = dmg;
             
         }
     }
