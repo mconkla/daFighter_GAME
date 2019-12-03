@@ -78,7 +78,7 @@ public class attackSystem : MonoBehaviour
     private float DMG = 0;
     private float delayToHit = 0.2f;
     [HideInInspector]
-    public controllerInputs myControllerInputs;
+    public controllerInputs         myControllerInputs;
     private triggerColliderSystem   myTriggerColliderSystem;
     private triggerScript           currentTriggerScript;
 
