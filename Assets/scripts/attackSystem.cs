@@ -14,6 +14,8 @@ public class attackSystem : MonoBehaviour
     public float DMGLightPunchNormal = 1f;
     [Range(0f, 2f)]
     public float delayToHitLightPunchNormal = 0.2f;
+    [HideInInspector]
+    public float timeStamp;
     [Range(0.1f, 3f)]
         //crouched
     public float DMGLightPunchCrouched = 1f;
@@ -74,6 +76,8 @@ public class attackSystem : MonoBehaviour
     [HideInInspector]
     public string myText = "Hallo";
 
+    [HideInInspector]
+    public bool hitted = false;
 
     private float DMG = 0;
     private float delayToHit = 0.2f;
@@ -86,13 +90,13 @@ public class attackSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
-        myTriggerColliderSystem = this.gameObject.transform.GetChild(0).GetComponent<triggerColliderSystem>();
+        onLoad();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         InputPlayer();
 
     }
@@ -100,115 +104,132 @@ public class attackSystem : MonoBehaviour
 
     private void InputPlayer()
     {
-        if (myControllerInputs.lightPunchNormal)
-        {
-            currentTriggerScript = myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>();
-            DMG = DMGLightPunchNormal;
-            delayToHit = delayToHitLightPunchNormal;
-            myText = "lightPunchNormal : " + currentTriggerScript.dmg;
-        }
-        else if (myControllerInputs.lightPunchCrouched)
-        {
-            currentTriggerScript = myTriggerColliderSystem.lightPunchCrouchTrigger.GetComponent<triggerScript>();
-            DMG = DMGLightPunchCrouched;
-            delayToHit = delayToHitLightPunchCrouched;
-            myText = "lightPunchCrouched : " + currentTriggerScript.dmg;
-        }
-        else if (myControllerInputs.lightPunchAir)
-        {
-            currentTriggerScript = myTriggerColliderSystem.lightPunchAirTrigger.GetComponent<triggerScript>();
-            DMG = DMGLightPunchAir;
-            delayToHit = delayToHitLightPunchAir;
-            myText = "lightPunchAir : " + currentTriggerScript.dmg;
-        }
-        else if (myControllerInputs.lightKickNormal)
-        {
-            currentTriggerScript = myTriggerColliderSystem.lightKickNormalTrigger.GetComponent<triggerScript>();
-            DMG = DMGLightKickNormal;
-            delayToHit = delayToHitLightKickNormal;
-            myText = "lightKickNormal : " + currentTriggerScript.dmg;
-        }
-        else if (myControllerInputs.lightKickCrouched)
-        {
-            currentTriggerScript = myTriggerColliderSystem.lightKickCrouchTrigger.GetComponent<triggerScript>();
-            DMG = DMGLightKickCrouched;
-            delayToHit = delayToHitLightKickCrouched;
-            myText = "lightKickCrouched : " + currentTriggerScript.dmg;
-        }
-        else if (myControllerInputs.lightKickAir)
-        {
-            currentTriggerScript = myTriggerColliderSystem.lightKickAirTrigger.GetComponent<triggerScript>();
-            DMG = DMGLightKickAir;
-            delayToHit = delayToHitLightKickAir;
-            myText = "lightKickAir : " + currentTriggerScript.dmg;
-        }
 
-        else if (myControllerInputs.heavyPunchNormal)
-        {
-            currentTriggerScript = myTriggerColliderSystem.heavyPunchNormalTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyPunchNormal * Mathf.Abs(myControllerInputs.dmgMultiplyer);
-            delayToHit = delayToHitHeavyPunchNormal;
-            myText = "heavyPunching Normal" + (DMG/ DMGHeavyPunchNormal) *100  + " % ";
-        }
-        else if (myControllerInputs.heavyPunchCrouched)
-        {
-            currentTriggerScript = myTriggerColliderSystem.heavyPunchCrouchTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyPunchCrouched;
-            delayToHit = delayToHitHeavyPunchCrouched;
-            myText = "heavyPunching Crouched" + myControllerInputs.heavyPunchState;
-        }
-        else if (myControllerInputs.heavyPunchAir)
-        {
-            currentTriggerScript = myTriggerColliderSystem.heavyPunchAirTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyPunchAir;
-            delayToHit = delayToHitHeavyPunchAir;
-            myText = "heavyPunching Air" + myControllerInputs.heavyPunchState;
-        }
-        else if (myControllerInputs.heavyKickNormal)
-        {
-            currentTriggerScript = myTriggerColliderSystem.heavyKickNormalTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyKickNormal;
-            delayToHit = delayToHitHeavyKickNormal;
-            myText = "heavyKick Normal" + myControllerInputs.heavyKickState;
-        }
-        else if (myControllerInputs.heavyKickCrouched)
-        {
-            currentTriggerScript = myTriggerColliderSystem.heavyKickCrouchTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyKickCrouched;
-            delayToHit = delayToHitHeavyKickCrouched;
-            myText = "heavyKick Crouched" + myControllerInputs.heavyKickState;
-        }
-        else if (myControllerInputs.heavyKickAir)
-        {
-            currentTriggerScript = myTriggerColliderSystem.heavyKickAirTrigger.GetComponent<triggerScript>();
-            DMG = DMGHeavyKickAir;
-            delayToHit = delayToHitHeavyKickAir;
-            myText = "heavyKick Air" + myControllerInputs.heavyKickState;
-        }
-        else if (myControllerInputs.grabbed)
-        {
-            currentTriggerScript = myTriggerColliderSystem.grabbTrigger.GetComponent<triggerScript>();
-            DMG = 0;
-            
-        }
+        myControllerInputs.hitted = hitted;
 
-        if (currentTriggerScript != null)
-        {
-            currentTriggerScript.timeStamp = Time.time;
-            spawnTriggerDelayed(currentTriggerScript);
-            currentTriggerScript.dmg = DMG;
-            currentTriggerScript = null;
-        }
+            if (myControllerInputs.lightPunchNormal)
+            {
+                currentTriggerScript = myTriggerColliderSystem.lightPunchNormalTrigger.GetComponent<triggerScript>();
+                DMG = DMGLightPunchNormal;
+                delayToHit = delayToHitLightPunchNormal;
+                myText = "lightPunchNormal : " + currentTriggerScript.dmg;
+            }
+            else if (myControllerInputs.lightPunchCrouched)
+            {
+                currentTriggerScript = myTriggerColliderSystem.lightPunchCrouchTrigger.GetComponent<triggerScript>();
+                DMG = DMGLightPunchCrouched;
+                delayToHit = delayToHitLightPunchCrouched;
+                myText = "lightPunchCrouched : " + currentTriggerScript.dmg;
+            }
+            else if (myControllerInputs.lightPunchAir)
+            {
+                currentTriggerScript = myTriggerColliderSystem.lightPunchAirTrigger.GetComponent<triggerScript>();
+                DMG = DMGLightPunchAir;
+                delayToHit = delayToHitLightPunchAir;
+                myText = "lightPunchAir : " + currentTriggerScript.dmg;
+            }
+            else if (myControllerInputs.lightKickNormal)
+            {
+                currentTriggerScript = myTriggerColliderSystem.lightKickNormalTrigger.GetComponent<triggerScript>();
+                DMG = DMGLightKickNormal;
+                delayToHit = delayToHitLightKickNormal;
+                myText = "lightKickNormal : " + currentTriggerScript.dmg;
+            }
+            else if (myControllerInputs.lightKickCrouched)
+            {
+                currentTriggerScript = myTriggerColliderSystem.lightKickCrouchTrigger.GetComponent<triggerScript>();
+                DMG = DMGLightKickCrouched;
+                delayToHit = delayToHitLightKickCrouched;
+                myText = "lightKickCrouched : " + currentTriggerScript.dmg;
+            }
+            else if (myControllerInputs.lightKickAir)
+            {
+                currentTriggerScript = myTriggerColliderSystem.lightKickAirTrigger.GetComponent<triggerScript>();
+                DMG = DMGLightKickAir;
+                delayToHit = delayToHitLightKickAir;
+                myText = "lightKickAir : " + currentTriggerScript.dmg;
+            }
 
-        if (myControllerInputs.blocked)
-        {
-            myText = "BLOCKING : ";
-        }
+            else if (myControllerInputs.heavyPunchNormal)
+            {
+                currentTriggerScript = myTriggerColliderSystem.heavyPunchNormalTrigger.GetComponent<triggerScript>();
+                DMG = DMGHeavyPunchNormal * Mathf.Abs(myControllerInputs.dmgMultiplyer);
+                delayToHit = delayToHitHeavyPunchNormal;
+                myText = "heavyPunching Normal" + (DMG / DMGHeavyPunchNormal) * 100 + " % ";
+            }
+            else if (myControllerInputs.heavyPunchCrouched)
+            {
+                currentTriggerScript = myTriggerColliderSystem.heavyPunchCrouchTrigger.GetComponent<triggerScript>();
+                DMG = DMGHeavyPunchCrouched;
+                delayToHit = delayToHitHeavyPunchCrouched;
+                myText = "heavyPunching Crouched" + myControllerInputs.heavyPunchState;
+            }
+            else if (myControllerInputs.heavyPunchAir)
+            {
+                currentTriggerScript = myTriggerColliderSystem.heavyPunchAirTrigger.GetComponent<triggerScript>();
+                DMG = DMGHeavyPunchAir;
+                delayToHit = delayToHitHeavyPunchAir;
+                myText = "heavyPunching Air" + myControllerInputs.heavyPunchState;
+            }
+            else if (myControllerInputs.heavyKickNormal)
+            {
+                currentTriggerScript = myTriggerColliderSystem.heavyKickNormalTrigger.GetComponent<triggerScript>();
+                DMG = DMGHeavyKickNormal;
+                delayToHit = delayToHitHeavyKickNormal;
+                myText = "heavyKick Normal" + myControllerInputs.heavyKickState;
+            }
+            else if (myControllerInputs.heavyKickCrouched)
+            {
+                currentTriggerScript = myTriggerColliderSystem.heavyKickCrouchTrigger.GetComponent<triggerScript>();
+                DMG = DMGHeavyKickCrouched;
+                delayToHit = delayToHitHeavyKickCrouched;
+                myText = "heavyKick Crouched" + myControllerInputs.heavyKickState;
+            }
+            else if (myControllerInputs.heavyKickAir)
+            {
+                currentTriggerScript = myTriggerColliderSystem.heavyKickAirTrigger.GetComponent<triggerScript>();
+                DMG = DMGHeavyKickAir;
+                delayToHit = delayToHitHeavyKickAir;
+                myText = "heavyKick Air" + myControllerInputs.heavyKickState;
+            }
+            else if (myControllerInputs.grabbed)
+            {
+                currentTriggerScript = myTriggerColliderSystem.grabbTrigger.GetComponent<triggerScript>();
+                DMG = 0;
 
-        async void spawnTriggerDelayed(triggerScript currentTriggerScript)
+            }
+
+            if (currentTriggerScript != null)
+            {
+                currentTriggerScript.timeStamp = Time.time;
+                spawnTriggerDelayed(currentTriggerScript);
+                currentTriggerScript.dmg = DMG;
+                currentTriggerScript = null;
+            }
+
+            if (myControllerInputs.blocked)
+            {
+                myText = "BLOCKING : ";
+            }
+
+            async void spawnTriggerDelayed(triggerScript currentTriggerScript)
+            {
+                await Task.Delay(TimeSpan.FromSeconds(delayToHit));
+                currentTriggerScript.triggerOn = true;
+            }
+        
+        if (hitted && Time.time - timeStamp > 0.4f)
         {
-            await Task.Delay(TimeSpan.FromSeconds(delayToHit));
-            currentTriggerScript.triggerOn = true;
+            hitted = false;
         }
+       
+        
+    }
+
+
+    void onLoad()
+    {
+        myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
+        myTriggerColliderSystem = this.gameObject.transform.GetChild(0).GetComponent<triggerColliderSystem>();
     }
 }

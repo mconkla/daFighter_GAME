@@ -30,4 +30,13 @@ public class launch : MonoBehaviour
 
 
     }
+
+    public void launchMultiplayer()
+    {
+       
+        
+        
+
+        SceneManager.LoadScene(2);
+    }
 }

@@ -36,6 +36,9 @@ public class controllerInputs : MonoBehaviour
     public Text debugText;
     private string testText = "";
 
+    [HideInInspector]
+    public bool hitted = false;
+
     void Start()
     {
         horizontal = "Horizontal" + this.gameObject.tag.ToString();
@@ -51,7 +54,12 @@ public class controllerInputs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!hitted)
+        InputPlayer();
+    }
 
+    void InputPlayer()
+    {
         debugText.text = testText;
 
         heavyAttack = heavyKickAir || heavyKickCrouched || heavyKickNormal || heavyPunchAir || heavyPunchCrouched || heavyPunchNormal;
@@ -62,6 +70,7 @@ public class controllerInputs : MonoBehaviour
         {
             if (!blocked && !crouched && !heavyAttack)
             {
+                Debug.Log("Hallo");
                 walkRight = true;
             }
         }
@@ -115,9 +124,9 @@ public class controllerInputs : MonoBehaviour
         //light kicks
 
         else if (Input.GetButtonDown(kickInput) && !blocked && !crouched && grounded)
-        { 
+        {
             testText = "Standing LK";
-            lightKickNormal = true;         
+            lightKickNormal = true;
         }
         else if (Input.GetButtonDown(kickInput) && !blocked && crouched && grounded)
         {
@@ -131,7 +140,7 @@ public class controllerInputs : MonoBehaviour
         }
 
         //heavy Punches
-        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && grounded )
+        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && grounded)
         {
             heavyPunchState += (1f * Time.fixedDeltaTime);
             if (heavyPunchState > 1.0f)
@@ -172,19 +181,19 @@ public class controllerInputs : MonoBehaviour
                 heavyPunchAir = true;
                 if (heavyPunchNormal)
                 {
-                    
+
                     testText = "Standing HP";
-                   
+
                 }
-                else if(heavyPunchCrouched)
+                else if (heavyPunchCrouched)
                 {
                     testText = "Crouching HP";
-                              
+
                 }
-                else if(heavyPunchAir)
+                else if (heavyPunchAir)
                 {
                     testText = "Air HP";
-                    
+
                 }
 
             }
@@ -289,7 +298,7 @@ public class controllerInputs : MonoBehaviour
             heavyKickCrouched = false;
             heavyKickAir = false;
 
-            
+
             grabbed = false;
 
         }

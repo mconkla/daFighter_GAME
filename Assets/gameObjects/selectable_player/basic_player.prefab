@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 7201763586188452295}
   - component: {fileID: 6701059590000973476}
   - component: {fileID: 4522424931611733649}
+  - component: {fileID: 4240296518410499778}
   m_Layer: 0
   m_Name: basic_player
   m_TagString: 1
@@ -580,9 +581,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 50
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 50
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
@@ -601,9 +602,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2452647010029546401}
-  speed: 100
-  jump: 3000
+  speed: 150
+  jump: 12000
   upperBody: {fileID: 2452647010029546407}
+  m_MovementSmoothing: 0.01
 --- !u!114 &2452647010029546404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +621,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   DMGLightPunchNormal: 1
   delayToHitLightPunchNormal: 0.2
+  timeStamp: 0
   DMGLightPunchCrouched: 1
   delayToHitLightPunchCrouched: 0.2
   DMGLightPunchAir: 1
@@ -642,6 +645,7 @@ MonoBehaviour:
   DMGHeavyKickAir: 1
   delayToHitHeavyKickAir: 0.2
   myText: 
+  hitted: 0
   myControllerInputs: {fileID: 0}
 --- !u!58 &2452647010029546407
 CircleCollider2D:
@@ -741,6 +745,7 @@ MonoBehaviour:
   heavyKickAir: 0
   dmgMultiplyer: 1
   debugText: {fileID: 0}
+  hitted: 0
 --- !u!114 &6701059590000973476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,6 +770,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4195c71248b891469cd258ac516fd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4240296518410499778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452647010029546335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d03111182cfdb945a4b333581854dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Punch
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    isPlaying: 0
+    source: {fileID: 0}
 --- !u!1 &2909391664390758241
 GameObject:
   m_ObjectHideFlags: 0

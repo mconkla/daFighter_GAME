@@ -7,6 +7,8 @@ public class animationHandling : MonoBehaviour
 
     Animator myAnimator;
     Animator effektAnimator;
+    AudioManager myAudioManager;
+    attackSystem myAttackSystem;
     controllerInputs myControllerInputs;
 
     // Start is called before the first frame update
@@ -15,6 +17,8 @@ public class animationHandling : MonoBehaviour
         myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
         myAnimator = this.gameObject.GetComponent<Animator>();
         effektAnimator = this.transform.GetChild(1).GetComponent<Animator>();
+        myAudioManager = this.gameObject.GetComponent<AudioManager>();
+        myAttackSystem = this.gameObject.GetComponent<attackSystem>();
     }
 
     // Update is called once per frame
@@ -39,9 +43,14 @@ public class animationHandling : MonoBehaviour
 
     void checkLightAttacks()
     {
+        if (myAttackSystem.hitted)
+        {
+            myAudioManager.Play("hitted");
+        }
         if (myControllerInputs.lightPunchNormal)
         {
             myAnimator.Play("lightpunchNormal_player");
+            myAudioManager.Play("punch");
            
         }
         

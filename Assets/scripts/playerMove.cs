@@ -9,8 +9,11 @@ public class playerMove : MonoBehaviour
     public float jump = 10.0f;
     public CircleCollider2D upperBody;
 
+    private bool hitted;
 
-    private float m_MovementSmoothing = .05f;
+    [Range(0f,1f)]
+    public float m_MovementSmoothing = .05f;
+
     private Vector3 m_Velocity = Vector3.zero;
 
     private Transform otherPlayer;
@@ -23,18 +26,20 @@ public class playerMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        onLoad();
         
-        myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
-        otherPlayer = FindObjectsOfType<playerMove>()[(this.gameObject.tag == "1" ? 2 : 1) - 1].gameObject.transform;
-       
     }
 
     // Update is called once per frame
     void Update()
     {
+        hitted = myControllerInputs.hitted;
+        if (!hitted) { 
         controlHorizontal();
         controlVertical();
-        
+        checkLookDir();
+        }
+
 
     }
 
@@ -45,14 +50,14 @@ public class playerMove : MonoBehaviour
         {
             Vector3 targetVelocity = new Vector2(speed * 0.10f, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-            checkLookDir();
+            
 
         }
         if (myControllerInputs.walkLeft)
         {
             Vector3 targetVelocity = new Vector2(-speed * 0.10f, rb.velocity.y);
             rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-            checkLookDir();
+            
         }
 
         
@@ -62,7 +67,9 @@ public class playerMove : MonoBehaviour
 
         if (myControllerInputs.jump)
         {
-            rb.AddForce(new Vector2(0f, jump));
+            rb.AddRelativeForce(new Vector2(0f, jump),ForceMode2D.Force);
+           
+          //  rb.AddForce();
         }
         else if (myControllerInputs.crouched)
         {
@@ -103,5 +110,10 @@ public class playerMove : MonoBehaviour
 
         }
 
+    }
+    void onLoad()
+    {
+        myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
+        otherPlayer = FindObjectsOfType<playerMove>()[(this.gameObject.tag == "1" ? 1 : 2) - 1].gameObject.transform;
     }
 }

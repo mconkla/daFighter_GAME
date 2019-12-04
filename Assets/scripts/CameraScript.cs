@@ -21,9 +21,17 @@ public class CameraScript : MonoBehaviour
     // The initial position of the GameObject
     Vector3 initialPosition;
     // Start is called before the first frame update
+
+
+    private void Awake()
+    {
+    }
     void Start()
     {
-        
+        player1 = player1.GetChild(0).gameObject.transform;
+        player2 = player2.GetChild(0).gameObject.transform;
+
+
     }
 
 
