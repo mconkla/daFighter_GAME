@@ -88,6 +88,7 @@ public class playerMove : MonoBehaviour
         
         Vector2 moveDirection;
         moveDirection = this.transform.position - enemy.transform.position;
+        moveDirection.y = Mathf.Abs(moveDirection.y);
         rb.AddForce(moveDirection.normalized * 150f);
         
     }
