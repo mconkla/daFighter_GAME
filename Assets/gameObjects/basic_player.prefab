@@ -488,11 +488,12 @@ GameObject:
   - component: {fileID: 2452647010029546401}
   - component: {fileID: 2452647010029546334}
   - component: {fileID: 2452647010029546404}
-  - component: {fileID: 2452647010029546407}
-  - component: {fileID: 2452647010029546403}
   - component: {fileID: 2452647010029546406}
   - component: {fileID: 7201763586188452295}
   - component: {fileID: 6701059590000973476}
+  - component: {fileID: 1691935729257106058}
+  - component: {fileID: 177378753257608038}
+  - component: {fileID: 5827108657048907182}
   m_Layer: 0
   m_Name: basic_player
   m_TagString: 1
@@ -601,7 +602,7 @@ MonoBehaviour:
   rb: {fileID: 2452647010029546401}
   speed: 100
   jump: 3000
-  upperBody: {fileID: 2452647010029546407}
+  upperBody: {fileID: 0}
 --- !u!114 &2452647010029546404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,42 +615,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fc3cd33c127284bbb07707e1d08b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: 
-  punchDMG: 0.01
-  kickDMG: 0.05
   healthBar: {fileID: 0}
---- !u!58 &2452647010029546407
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2452647010029546335}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: b754df1c1d9ecba4b859994007b4f617, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.08509602, y: 1.9887332}
-  serializedVersion: 2
-  m_Radius: 1.7971904
---- !u!58 &2452647010029546403
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2452647010029546335}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: b754df1c1d9ecba4b859994007b4f617, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.085094586, y: -1.7460569}
-  serializedVersion: 2
-  m_Radius: 2.0823345
+  DMGLightPunchNormal: 1
+  delayToHitLightPunchNormal: 0.2
+  DMGLightPunchCrouched: 1
+  delayToHitLightPunchCrouched: 0.2
+  DMGLightPunchAir: 1
+  delayToHitLightPunchAir: 0.2
+  DMGLightKickNormal: 1
+  delayToHitLightKickNormal: 0.2
+  DMGLightKickCrouched: 1
+  delayToHitLightKickCrouched: 0.2
+  DMGLightKickAir: 1
+  delayToHitLightKickAir: 0.2
+  DMGHeavyPunchNormal: 1
+  delayToHitHeavyPunchNormal: 0.2
+  DMGHeavyPunchCrouched: 1
+  delayToHitHeavyPunchCrouched: 0.2
+  DMGHeavyPunchAir: 1
+  delayToHitHeavyPunchAir: 0.2
+  DMGHeavyKickNormal: 1
+  delayToHitHeavyKickNormal: 0.2
+  DMGHeavyKickCrouched: 1
+  delayToHitHeavyKickCrouched: 0.2
+  DMGHeavyKickAir: 1
+  delayToHitHeavyKickAir: 0.2
+  myText: 
+  myControllerInputs: {fileID: 0}
 --- !u!95 &2452647010029546406
 Animator:
   serializedVersion: 3
@@ -695,6 +687,7 @@ MonoBehaviour:
   jump: 0
   grounded: 0
   blocked: 0
+  crouchBlocked: 0
   grabbed: 0
   heavyAttack: 0
   lightAttack: 0
@@ -726,6 +719,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ea9bb2d6f155341bd9b1cb7c4da31f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &1691935729257106058
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452647010029546335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 4, y: 8.139999}
+  m_Direction: 0
+--- !u!58 &177378753257608038
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452647010029546335}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b754df1c1d9ecba4b859994007b4f617, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2.14}
+  serializedVersion: 2
+  m_Radius: 2.18
+--- !u!58 &5827108657048907182
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452647010029546335}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: b754df1c1d9ecba4b859994007b4f617, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 2.24}
+  serializedVersion: 2
+  m_Radius: 2.18
 --- !u!1 &2909391664390758241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1122,9 @@ MonoBehaviour:
   heavyKickAirTrigger: {fileID: 1525921201198281192}
   grabbTrigger: {fileID: 4297832611787344464}
   otherPlayer: 0
+  parentObject: {fileID: 0}
+  localScale: 0
+  crouched: 0
 --- !u!1 &4297832611787344464
 GameObject:
   m_ObjectHideFlags: 0
