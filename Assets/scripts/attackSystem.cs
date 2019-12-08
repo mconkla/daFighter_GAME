@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 
 public class attackSystem : MonoBehaviour
 {
+    [HideInInspector]
+    public bool spawnDamageIndicator = false;
 
     public Health healthBar;
     //Light Punch
