@@ -81,7 +81,9 @@ public class attackSystem : MonoBehaviour
     [HideInInspector]
     public bool hitted = false;
 
-    private float DMG = 0;
+    [HideInInspector]
+    public float DMG = 0;
+
     private float delayToHit = 0.2f;
     [HideInInspector]
     public controllerInputs         myControllerInputs;

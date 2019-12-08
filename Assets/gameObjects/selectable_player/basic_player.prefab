@@ -511,7 +511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2452647010029546335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.862, y: 0.179, z: 0}
+  m_LocalPosition: {x: -4.862, y: 0.179, z: 1}
   m_LocalScale: {x: 0.20826949, y: 0.20826946, z: 1.2801957}
   m_Children:
   - {fileID: 9135588986429302468}
@@ -619,12 +619,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92fc3cd33c127284bbb07707e1d08b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: 
-  myControllerInputs: {fileID: 0}
-  hitted: 0
+  spawnDamageIndicator: 0
   healthBar: {fileID: 0}
   DMGLightPunchNormal: 1
   delayToHitLightPunchNormal: 0.2
+  timeStamp: 0
   DMGLightPunchCrouched: 1
   delayToHitLightPunchCrouched: 0.2
   DMGLightPunchAir: 1
@@ -647,7 +646,10 @@ MonoBehaviour:
   delayToHitHeavyKickCrouched: 0.2
   DMGHeavyKickAir: 1
   delayToHitHeavyKickAir: 0.2
-  timeStamp: 0
+  myText: 
+  hitted: 0
+  DMG: 0
+  myControllerInputs: {fileID: 0}
 --- !u!95 &2452647010029546406
 Animator:
   serializedVersion: 3
@@ -1224,6 +1226,8 @@ MonoBehaviour:
   heavyPunchAirTrigger: {fileID: 2909391664390758241}
   heavyKickAirTrigger: {fileID: 1525921201198281192}
   grabbTrigger: {fileID: 0}
+  dmgIndicator: {fileID: 2841212584700989035, guid: 6fba485d2956b8f488c6d71eb1a13c3b,
+    type: 3}
   otherPlayer: 0
   parentObject: {fileID: 0}
   localScale: 0

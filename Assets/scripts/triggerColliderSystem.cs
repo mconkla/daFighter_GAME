@@ -8,6 +8,7 @@ public class triggerColliderSystem : MonoBehaviour
     public GameObject lightPunchCrouchTrigger, lightKickCrouchTrigger, heavyPunchCrouchTrigger, heavyKickCrouchTrigger;
     public GameObject lightPunchAirTrigger, lightKickAirTrigger, heavyPunchAirTrigger, heavyKickAirTrigger,grabbTrigger;
 
+    public GameObject dmgIndicator;
     
  
 

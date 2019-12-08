@@ -13,14 +13,16 @@ public class triggerScript : MonoBehaviour
     public float dmg = 0f;
 
     
-
+    private GameObject dmgIndicator;
     private triggerColliderSystem myTriggerSystem;
     private int lastframe;
 
     // Start is called before the first frame update
     void Start()
     {
-        myTriggerSystem = this.gameObject.GetComponentInParent<triggerColliderSystem>();        
+        
+        myTriggerSystem = this.gameObject.GetComponentInParent<triggerColliderSystem>();
+        dmgIndicator = myTriggerSystem.dmgIndicator;
     }
 
     // Update is called once per frame
@@ -104,9 +106,9 @@ public class triggerScript : MonoBehaviour
         }
         if (collision.GetComponent<attackSystem>().spawnDamageIndicator == true && Time.frameCount != lastframe && Time.frameCount >5)
         {
-            Debug.Log("Spwan new Damage Indicator");
-            GameObject  indicator = (GameObject )Instantiate(Resources.Load("DamageIndicator"), myTriggerSystem.GetComponentInParent<Transform>().position-collision.transform.position, Quaternion.identity) as GameObject;
-            damageIndicators test = (damageIndicators)indicator.GetComponent(typeof(damageIndicators));
+            Debug.Log(collision.transform.localPosition + "HAllo");
+            GameObject  indicator = Instantiate(dmgIndicator, collision.transform.localPosition,collision.transform.rotation);
+            damageIndicators test = indicator.GetComponent<damageIndicators>();
             test.dmg = dmg;
             collision.GetComponent<attackSystem>().spawnDamageIndicator = false;
             lastframe = Time.frameCount;
