@@ -17,7 +17,7 @@ public class inputModule : MonoBehaviour
         jumpInput, jumpInputDown, jumpInputUp;
 
     private string 
-        punchInputPlayer, kickInputPlayer, blockInputPlayer, heavyPunchPlayer, heavyKickPlayer,grabInputPlayer,
+        punchInputPlayer, kickInputPlayer, blockInputPlayer, heavyPunchInputPlayer, heavyKickInputPlayer,grabInputPlayer,
         horizontalPlayer, verticalPlayer= "";
 
 
@@ -29,10 +29,10 @@ public class inputModule : MonoBehaviour
             verticalPlayer = "Vertical" + this.gameObject.tag.ToString();
             punchInputPlayer = "Fire1" + this.gameObject.tag.ToString();
             kickInputPlayer = "Fire2" + this.gameObject.tag.ToString();
-            heavyKickPlayer = "Fire3" + this.gameObject.tag.ToString();
-            heavyPunchPlayer = "Fire4" + this.gameObject.tag.ToString();
+            heavyKickInputPlayer = "Fire3" + this.gameObject.tag.ToString();
+            heavyPunchInputPlayer = "Fire4" + this.gameObject.tag.ToString();
             blockInputPlayer = "Bumper" + this.gameObject.tag.ToString();
-            grabInputPlayer = "Grabb" + this.gameObject.tag.ToString();
+            grabInputPlayer = "Grab" + this.gameObject.tag.ToString();
         }
     }
 
@@ -44,13 +44,13 @@ public class inputModule : MonoBehaviour
             this.grabInputDown = Input.GetButtonDown(grabInputPlayer) == true ? true : false;
             this.grabInputUp = Input.GetButtonUp(grabInputPlayer) == true ? true : false;
 
-            this.heavyPunchInput = Input.GetButton(heavyPunchPlayer) == true ? true : false;
-            this.heavyPunchInputDown = Input.GetButtonDown(heavyPunchPlayer) == true ? true : false;
-            this.heavyPunchInputUp = Input.GetButtonUp(heavyPunchPlayer) == true ? true : false;
+            this.heavyPunchInput = Input.GetButton(heavyPunchInputPlayer) == true ? true : false;
+            this.heavyPunchInputDown = Input.GetButtonDown(heavyPunchInputPlayer) == true ? true : false;
+            this.heavyPunchInputUp = Input.GetButtonUp(heavyPunchInputPlayer) == true ? true : false;
 
-            this.heavyKickInput = Input.GetButton(heavyKickPlayer) == true ? true : false;
-            this.heavyKickInputDown = Input.GetButtonDown(heavyKickPlayer) == true ? true : false;
-            this.heavyKickInputUp = Input.GetButtonUp(heavyKickPlayer) == true ? true : false;
+            this.heavyKickInput = Input.GetButton(heavyKickInputPlayer) == true ? true : false;
+            this.heavyKickInputDown = Input.GetButtonDown(heavyKickInputPlayer) == true ? true : false;
+            this.heavyKickInputUp = Input.GetButtonUp(heavyKickInputPlayer) == true ? true : false;
 
             this.kickInput = Input.GetButton(kickInputPlayer) == true ? true : false;
             this.kickInputDown = Input.GetButtonDown(kickInputPlayer) == true ? true : false;

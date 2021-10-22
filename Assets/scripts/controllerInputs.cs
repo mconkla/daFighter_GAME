@@ -19,8 +19,8 @@ public class controllerInputs : MonoBehaviour
 
     public float heavyPunchState, heavyKickState = 0.0f;
     public int staggerd = 0;
-    public float dmgMultiplyer = 1;
-    public bool hitted = false;
+    public float dmgMultiplier = 1;
+    public bool wasHit = false;
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class controllerInputs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hitted)
+        if (!wasHit)
         {
             myInputModule.update();
             InputPlayer();
@@ -246,7 +246,7 @@ public class controllerInputs : MonoBehaviour
         if (heavyKickState > 1.0f)
         {
             heavyKickState = -1;
-            dmgMultiplyer = 1.5f;
+            dmgMultiplier = 1.5f;
         }
     }
 
@@ -262,7 +262,7 @@ public class controllerInputs : MonoBehaviour
         if (heavyPunchState > 1.0f)
         {
             heavyPunchState = -0.2f;
-            dmgMultiplyer = 1.5f;
+            dmgMultiplier = 1.5f;
         }
     }
 
@@ -275,7 +275,7 @@ public class controllerInputs : MonoBehaviour
         {
             if (heavyPunchState != -0.2f)
             {
-                dmgMultiplyer = 1f;
+                dmgMultiplier = 1f;
             }
             switch (type)
             {
@@ -295,7 +295,7 @@ public class controllerInputs : MonoBehaviour
         {
             if (heavyKickState != -1)
             {
-                dmgMultiplyer = 1f;
+                dmgMultiplier = 1f;
             }
             switch (type)
             {
@@ -414,27 +414,27 @@ public class controllerInputs : MonoBehaviour
 
         if (heavyPunchNormal)
         {
-            Debug.Log("debugInputs: heavyPunchNormal : " + this.dmgMultiplyer);
+            Debug.Log("debugInputs: heavyPunchNormal : " + this.dmgMultiplier);
         }
         else if (heavyPunchCrouched)
         {
-            Debug.Log("debugInputs: heavyPunchCrouched : " + this.dmgMultiplyer);
+            Debug.Log("debugInputs: heavyPunchCrouched : " + this.dmgMultiplier);
         }
         else if (heavyPunchAir)
         {
-            Debug.Log("debugInputs: heavyPunchAir : " + this.dmgMultiplyer);
+            Debug.Log("debugInputs: heavyPunchAir : " + this.dmgMultiplier);
         }
         else if (heavyKickNormal)
         {
-            Debug.Log("debugInputs: heavyKickNormal : " + this.dmgMultiplyer);
+            Debug.Log("debugInputs: heavyKickNormal : " + this.dmgMultiplier);
         }
         else if (heavyKickCrouched)
         {
-            Debug.Log("debugInputs: heavyKickCrouched : " + this.dmgMultiplyer);
+            Debug.Log("debugInputs: heavyKickCrouched : " + this.dmgMultiplier);
         }
         else if (heavyKickAir)
         {
-            Debug.Log("debugInputs: heavyKickAir : " + this.dmgMultiplyer);
+            Debug.Log("debugInputs: heavyKickAir : " + this.dmgMultiplier);
         }
     }
 

@@ -33,7 +33,7 @@ public class playerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hitted = myControllerInputs.hitted;
+        hitted = myControllerInputs.wasHit;
         if (!hitted) { 
         controlHorizontal();
         controlVertical();
