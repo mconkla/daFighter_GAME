@@ -44,12 +44,6 @@ public class gameStart : MonoBehaviour
         player1Object.SetActive(true);
         player2Object.SetActive(true);
 
-
-        player1Object.GetComponent<controllerInputs>().debugText = player1Text.GetComponent<Text>();
-       player2Object.GetComponent<controllerInputs>().debugText = player2Text.GetComponent<Text>();
-
-
-
     }
 
     // Update is called once per frame
