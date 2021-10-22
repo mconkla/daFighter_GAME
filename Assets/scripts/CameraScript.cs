@@ -1,13 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-
-
     public Transform player1, player2;
-
 
     // Desired duration of the shake effect
     private float shakeDuration = 0f;
@@ -20,22 +15,14 @@ public class CameraScript : MonoBehaviour
 
     // The initial position of the GameObject
     Vector3 initialPosition;
+
+
     // Start is called before the first frame update
-
-
-    private void Awake()
-    {
-    }
     void Start()
     {
         player1 = player1.GetChild(0).gameObject.transform;
         player2 = player2.GetChild(0).gameObject.transform;
-
-
     }
-
-
-
     void OnEnable()
     {
         initialPosition = transform.localPosition;
@@ -53,22 +40,17 @@ public class CameraScript : MonoBehaviour
         else
         {
             shakeDuration = 0f;
-            transform.localPosition = initialPosition;
         }
 
-        checkPos();
-    
-    }
-    
-    public void TriggerShake()
-    {
-        shakeDuration = 0.08f;
+        UpdatePosition();
+
     }
 
-    public void checkPos()
+    private void UpdatePosition()
     {
         float distance = Mathf.Abs(player1.position.x - player2.position.x);
-        if(player1.position.x < player2.position.x)
+
+        if (player1.position.x < player2.position.x)
         {
             this.transform.position = new Vector3(player1.position.x + distance / 2, this.transform.position.y, this.transform.position.z);
 
@@ -79,5 +61,10 @@ public class CameraScript : MonoBehaviour
 
         }
 
+    }
+
+    public void TriggerShake()
+    {
+        shakeDuration = 0.08f;
     }
 }
