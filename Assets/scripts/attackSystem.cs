@@ -109,7 +109,7 @@ public class attackSystem : MonoBehaviour
     private void InputPlayer()
     {
 
-        myControllerInputs.hitted = hitted;
+        myControllerInputs.wasHit = hitted;
 
             if (myControllerInputs.lightPunchNormal)
             {
@@ -157,7 +157,7 @@ public class attackSystem : MonoBehaviour
             else if (myControllerInputs.heavyPunchNormal)
             {
                 currentTriggerScript = myTriggerColliderSystem.heavyPunchNormalTrigger.GetComponent<triggerScript>();
-                DMG = DMGHeavyPunchNormal * Mathf.Abs(myControllerInputs.dmgMultiplyer);
+                DMG = DMGHeavyPunchNormal * Mathf.Abs(myControllerInputs.dmgMultiplier);
                 delayToHit = delayToHitHeavyPunchNormal;
                 myText = "heavyPunching Normal" + (DMG / DMGHeavyPunchNormal) * 100 + " % ";
             }

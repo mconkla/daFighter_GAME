@@ -5,303 +5,358 @@ using UnityEngine.UI;
 
 public class controllerInputs : MonoBehaviour
 {
+    
+    private inputModule myInputModule;
 
+//    [HideInInspector]
+    public bool 
+        crouched,jump, grounded, blocked,crouchBlocked,grabbed,
+        heavyAttack,lightAttack,
+        walkLeft, walkRight, 
+        lightPunchNormal,lightPunchCrouched,lightPunchAir,lightKickNormal,lightKickCrouched,lightKickAir,
+        heavyPunchNormal,heavyPunchCrouched,heavyPunchAir,heavyKickNormal,heavyKickCrouched,heavyKickAir
+        = false;
 
-    [HideInInspector]
-    public string horizontal, vertical = "";
-    [HideInInspector]
-    public string punchInput, kickInput, blockInput, heavyPunch, heavyKick,grabbInput = "";
-
-    [HideInInspector]
     public float heavyPunchState, heavyKickState = 0.0f;
-
-    [HideInInspector]
-    public bool crouched,jump, grounded, blocked,crouchBlocked,grabbed = false;
-
-    [HideInInspector]
-    public bool heavyAttack,lightAttack = false;
-
-    [HideInInspector]
     public int staggerd = 0;
+    public float dmgMultiplier = 1;
+    public bool wasHit = false;
 
-    [HideInInspector]
-    public bool walkLeft, walkRight, lightPunchNormal,lightPunchCrouched,lightPunchAir,lightKickNormal,lightKickCrouched,lightKickAir,
-        heavyPunchNormal,heavyPunchCrouched,heavyPunchAir,heavyKickNormal,heavyKickCrouched,heavyKickAir= false;
-
-    [HideInInspector]
-    public float dmgMultiplyer = 1;
-
-    // Start is called before the first frame update
-
-    public Text debugText;
-    private string testText = "";
-
-    [HideInInspector]
-    public bool hitted = false;
-
-    void Start()
+    private void Start()
     {
-        horizontal = "Horizontal" + this.gameObject.tag.ToString();
-        vertical = "Vertical" + this.gameObject.tag.ToString();
-        punchInput = "Fire1" + this.gameObject.tag.ToString();
-        kickInput = "Fire2" + this.gameObject.tag.ToString();
-        heavyKick = "Fire3" + this.gameObject.tag.ToString();
-        heavyPunch = "Fire4" + this.gameObject.tag.ToString();
-        blockInput = "Bumper" + this.gameObject.tag.ToString();
-        grabbInput = "Grabb" + this.gameObject.tag.ToString();
+        myInputModule = GetComponent<inputModule>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        if(!hitted)
-        InputPlayer();
+        if (!wasHit)
+        {
+            myInputModule.update();
+            InputPlayer();
+        }
+            
+
+        this.debugInputs();
     }
 
     void InputPlayer()
     {
-        debugText.text = testText;
-
         heavyAttack = heavyKickAir || heavyKickCrouched || heavyKickNormal || heavyPunchAir || heavyPunchCrouched || heavyPunchNormal;
         lightAttack = lightKickAir || lightKickCrouched || lightKickNormal || lightPunchAir || lightPunchCrouched || lightPunchNormal;
 
-        //Axen Input
-        if (Input.GetAxis(horizontal) > 0.5 && !heavyAttack && !lightAttack)
-        {
-            if (!blocked && !crouched && !heavyAttack)
-            {
-                Debug.Log("Hallo");
-                walkRight = true;
-            }
-        }
-        else if (Input.GetAxis(horizontal) < -0.5 && !heavyAttack && !lightAttack)
-        {
-            if (!blocked && !crouched)
-            {
-                walkLeft = true;
-            }
-        }
-        else
-        {
-            walkLeft = false;
-            walkRight = false;
-        }
+        this.horizontalInputs();
+        this.verticalInputs();
+        this.lightInputs();
+        this.heavyInputs();
+        this.blockInputs();
+        this.grabInputs();
+        
+    }
 
-        if (Input.GetAxis(vertical) > 0.2 && grounded && !blocked && !heavyAttack)
-        {
-            jump = true;
-            grounded = false;
-        }
-        else if (Input.GetAxis(vertical) < -0.5)
-        {
-            crouched = true;
-        }
-        else
-        {
-            jump = false;
-            crouched = false;
-        }
-        //Axen Input
-
-
-
-        //light punches
-        if (Input.GetButtonDown(punchInput) && !blocked && !crouched && grounded)
-        {
-            testText = "Standing LP";
-            lightPunchNormal = true;
-        }
-        else if (Input.GetButtonDown(punchInput) && !blocked && crouched && grounded)
-        {
-            testText = "Crouching LP";
-            lightPunchCrouched = true;
-        }
-        else if (Input.GetButtonDown(punchInput) && !blocked && !crouched && !grounded)
-        {
-            testText = "Air LP";
-            lightPunchAir = true;
-        }
-        //light kicks
-
-        else if (Input.GetButtonDown(kickInput) && !blocked && !crouched && grounded)
-        {
-            testText = "Standing LK";
-            lightKickNormal = true;
-        }
-        else if (Input.GetButtonDown(kickInput) && !blocked && crouched && grounded)
-        {
-            testText = "Crouching LK";
-            lightKickCrouched = true;
-        }
-        else if (Input.GetButtonDown(kickInput) && !blocked && !crouched && !grounded)
-        {
-            testText = "Air LK";
-            lightKickAir = true;
-        }
-
-        //heavy Punches
-        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && grounded)
-        {
-            heavyPunchState += (1f * Time.fixedDeltaTime);
-            if (heavyPunchState > 1.0f)
-            {
-
-                heavyPunchState = -0.2f;
-                testText = "Standing HP";
-                heavyPunchNormal = true;
-                dmgMultiplyer = heavyPunchState;
-            }
-        }
-        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && crouched && grounded)
-        {
-            heavyPunchState += (1f * Time.fixedDeltaTime);
-            if (heavyPunchState > 1)
-            {
-                heavyPunchState = -0.2f;
-                testText = "Crouching HP";
-                heavyPunchCrouched = true;
-            }
-        }
-        else if (Input.GetButton(heavyPunch) && heavyPunchState >= 0 && !blocked && !crouched && !grounded)
-        {
-            heavyPunchState += (1f * Time.fixedDeltaTime);
-            if (heavyPunchState > 1)
-            {
-                heavyPunchState = -1;
-                testText = "Air HP";
-                heavyPunchAir = true;
-            }
-        }
-        else if (Input.GetButtonUp(heavyPunch) && !blocked)//on release
-        {
-            if (heavyPunchState != -0.2f)
-            {
-                heavyPunchNormal = true;
-                heavyPunchCrouched = true;
-                heavyPunchAir = true;
-                if (heavyPunchNormal)
-                {
-
-                    testText = "Standing HP";
-
-                }
-                else if (heavyPunchCrouched)
-                {
-                    testText = "Crouching HP";
-
-                }
-                else if (heavyPunchAir)
-                {
-                    testText = "Air HP";
-
-                }
-
-            }
-            dmgMultiplyer = heavyPunchState;
-            heavyPunchState = 0;
-        }
-
-
-        //Heavy Kicks
-        else if (Input.GetButton(heavyKick) && heavyKickState >= 0 && !blocked && !crouched && grounded)
-        {
-            heavyKickState += (1f * Time.fixedDeltaTime);
-            if (heavyKickState > 1)
-            {
-                heavyKickState = -1;
-                testText = "Standing HK";
-                heavyKickNormal = true;
-            }
-        }
-        else if (Input.GetButton(heavyKick) && heavyKickState >= 0 && !blocked && crouched && grounded)
-        {
-            heavyKickState += (1f * Time.fixedDeltaTime);
-            if (heavyKickState > 1)
-            {
-                heavyKickState = -1;
-                testText = "Crouching HK";
-                heavyKickCrouched = true;
-            }
-        }
-        else if (Input.GetButton(heavyKick) && heavyKickState >= 0 && !blocked && !crouched && !grounded)
-        {
-            heavyKickState += (1f * Time.fixedDeltaTime);
-            if (heavyKickState > 1)
-            {
-                heavyKickState = -1;
-                testText = "Air HK";
-                heavyKickAir = true;
-            }
-        }
-        else if (Input.GetButtonUp(heavyKick) && !blocked)//on release
-        {
-            if (heavyKickState != -1)
-            {
-                heavyKickNormal = true;
-                heavyKickCrouched = true;
-                heavyKickAir = true;
-                if (heavyKickNormal)
-                {
-                    testText = "Standing HK";
-                }
-                else if (heavyKickCrouched)
-                {
-                    testText = "Crouching HK";
-                }
-                else if (heavyKickAir)
-                {
-                    testText = "Air HK";
-                }
-            }
-            dmgMultiplyer = heavyPunchState;
-            heavyKickState = 0;
-        }
-        //blocking
-        else if (Input.GetButton(blockInput) && !crouched)
-        {
-            blocked = true;
-            testText = "Blocking";
-        }
-        else if (Input.GetButton(blockInput) && crouched)
-        {
-            crouchBlocked = true;
-            testText = "CrouchBlocking";
-        }
-        else if (Input.GetButtonUp(blockInput))//on release
-        {
-            blocked = false;
-            crouchBlocked = false;
-            testText = "Released Blocking";
-        }
-
-        //grabbing
-        else if (Input.GetButtonDown(grabbInput))
+    private void grabInputs()
+    {
+        if (myInputModule.grabInputDown)
         {
             grabbed = true;
         }
-        //reset attacks
-        else
+        if(myInputModule.grabInputUp)//on release
         {
-            lightPunchNormal = false;
-            lightPunchCrouched = false;
-            lightPunchAir = false;
-
-            lightKickNormal = false;
-            lightKickCrouched = false;
-            lightKickAir = false;
-
-            heavyPunchNormal = false;
-            heavyPunchCrouched = false;
-            heavyPunchAir = false;
-
-            heavyKickNormal = false;
-            heavyKickCrouched = false;
-            heavyKickAir = false;
-
-
             grabbed = false;
-
         }
+    }
+
+    /*
+     * blocked for normal blocking
+     * crouchBlocked for crouch blocking
+     */
+    private void blockInputs()
+    {
+        if (myInputModule.blockInput && !crouched)
+        {
+            blocked = true;
+        } 
+        else if (myInputModule.blockInput && crouched)
+        {
+            crouchBlocked = true;
+        } 
+        if (myInputModule.blockInputUp)//on release
+        {
+            blocked = false;
+            crouchBlocked = false;
+        }
+
+    }
+
+     /*
+     * light punches can only be executed when not blocking
+     * light punch normal and light kick normal only executeable when not crouching and being grounded
+     * light punch air and light kick air only executeable when not crouched and not grounded
+     * light punch crouched and light kick crouched only executeable when crouched and grounded
+     */
+    private void lightInputs()
+    {
+        if (!blocked)
+        {
+            if(!crouched && grounded)
+            {
+                if (myInputModule.punchInputDown)
+                {
+                    lightPunchNormal = true;
+                }
+                else if (myInputModule.punchInputUp)
+                {
+                    lightPunchNormal = false;
+                }
+                if (myInputModule.kickInputDown)
+                {
+                    lightKickNormal = true;
+                }
+                else if (myInputModule.kickInputUp)
+                {
+                    lightKickNormal = false;
+                }
+            }
+            else if(!crouched && !grounded)
+            {
+                if (myInputModule.punchInputDown)
+                {
+                    lightPunchAir = true;
+                }
+                else if (myInputModule.punchInputUp)
+                {
+                    lightPunchAir = false;
+                }
+                if (myInputModule.kickInputDown)
+                {
+                    lightKickAir = true;
+                }
+                else if (myInputModule.kickInputUp)
+                {
+                    lightKickAir = false;
+                }
+            }
+            else if(crouched && grounded)
+            {
+                if (myInputModule.punchInputDown)
+                {
+                    lightPunchCrouched = true;
+                }
+                else if (myInputModule.punchInputUp)
+                {
+                    lightPunchCrouched = false;
+                }
+                if (myInputModule.kickInputDown)
+                {
+                    lightKickCrouched = true;
+                }
+                else if (myInputModule.kickInputUp)
+                {
+                    lightKickCrouched = false;
+                }
+            }
+        }
+    }
+
+
+    /*
+     * heavy attacks can only be executed when not blocking
+     * heavy punch and kick normal can only be executed when not crouching and being grounded
+     * heavy punch and kick crouched can only be executed when being crouched and being grounded
+     * heavy punch and kick air can only be executed when not crouching and not grounded
+     */
+    private void heavyInputs()
+    {
+        if (!blocked)
+        {
+            if(!crouched && grounded)
+            {
+                this.releaseHeavy("normal");
+                if (myInputModule.heavyPunchInput && heavyPunchState >= 0)
+                {
+                    this.heavyPunchStateChanger();
+                }
+                if (myInputModule.heavyKickInput && heavyKickState >= 0)
+                {
+                    this.heavyKickStateChanger();
+                }
+                if (!myInputModule.heavyPunchInputUp)
+                {
+                    heavyPunchNormal = false;
+                }
+                if (!myInputModule.heavyKickInputUp)
+                {
+                    heavyKickNormal = false;
+                }
+            }
+            else if (crouched && grounded)
+            {
+                this.releaseHeavy("crouched");
+                if (myInputModule.heavyPunchInput && heavyPunchState >= 0)
+                {
+                    this.heavyPunchStateChanger();
+                }
+                if (myInputModule.heavyKickInput && heavyKickState >= 0)
+                {
+                    this.heavyKickStateChanger();
+                }
+                if (!myInputModule.heavyPunchInputUp)
+                {
+                    heavyPunchCrouched = false;
+                }
+                if (!myInputModule.heavyKickInputUp)
+                {
+                    heavyKickCrouched = false;
+                }
+
+            }
+            else if(!crouched && !grounded)
+            {
+                this.releaseHeavy("air");
+                if (myInputModule.heavyPunchInput && heavyPunchState >= 0)
+                {
+                    this.heavyPunchStateChanger();
+                }
+                if (myInputModule.heavyKickInput && heavyKickState >= 0)
+                {
+                    this.heavyKickStateChanger();
+                }
+                if (!myInputModule.heavyPunchInputUp)
+                {
+                    heavyPunchAir = false;
+                }
+                if (!myInputModule.heavyKickInputUp)
+                {
+                    heavyKickAir = false;
+                }
+
+            }   
+        }
+    }
+
+    
+    /*
+     * a heavy attak will multiply normal dmg when hitting 100% on holding the button down
+     */
+    private void heavyKickStateChanger()
+    {
+        if(heavyKickState != -1)
+        {
+            heavyKickState += (1f * Time.deltaTime);
+        }
+        if (heavyKickState > 1.0f)
+        {
+            heavyKickState = -1;
+            dmgMultiplier = 1.5f;
+        }
+    }
+
+    /*
+     * a heavy attak will multiply normal dmg when hitting 100% on holding the button down
+     */
+    private void heavyPunchStateChanger()
+    {
+        if(heavyPunchState != -0.2f)
+        {
+            heavyPunchState += (1f * Time.deltaTime);
+        }
+        if (heavyPunchState > 1.0f)
+        {
+            heavyPunchState = -0.2f;
+            dmgMultiplier = 1.5f;
+        }
+    }
+
+    /*
+     * if heavy input is being released the heavy state will be set to 0 again
+     */
+    private void releaseHeavy(string type)
+    {
+        if (myInputModule.heavyPunchInputUp)
+        {
+            if (heavyPunchState != -0.2f)
+            {
+                dmgMultiplier = 1f;
+            }
+            switch (type)
+            {
+                case "normal":
+                    heavyPunchNormal = true;
+                    break;
+                case "crouched":
+                    heavyPunchCrouched = true;
+                    break;
+                case "air":
+                    heavyPunchAir = true;
+                    break;
+            }
+            heavyPunchState = 0;
+        }
+        else if (myInputModule.heavyKickInputUp)
+        {
+            if (heavyKickState != -1)
+            {
+                dmgMultiplier = 1f;
+            }
+            switch (type)
+            {
+                case "normal":
+                    heavyKickNormal = true;
+                    break;
+                case "crouched":
+                    heavyKickCrouched = true;
+                    break;
+                case "air":
+                    heavyKickAir = true;
+                    break;
+            }
+            heavyKickState = 0;
+        } 
+    }
+
+   
+    /*
+     * only walk when not performing any attack block or crouch
+     */
+    private void horizontalInputs()
+    {
+         if(!heavyAttack && !lightAttack && !crouched && !blocked)
+         {
+                if (myInputModule.horizontalInput > 0.5)
+                {
+                    walkRight = true;
+                }
+                else if (myInputModule.horizontalInput < -0.5)
+                {
+                    walkLeft = true;
+                }
+                else
+                {
+                    walkLeft = false;
+                    walkRight = false;
+                }
+         }
+    }
+    
+    /*
+     * only jump when grounded and not inside an heavy attack
+     * 
+     */
+    private void verticalInputs()
+    {
+           if (myInputModule.verticalInput > 0.2 && grounded && !heavyAttack)
+           {
+                jump = true;
+                grounded = false;
+           }
+           else if (myInputModule.verticalInput < -0.5)
+           {
+                crouched = true;
+           }
+           else
+           {
+                jump = false;
+                crouched = false;
+           }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -311,4 +366,76 @@ public class controllerInputs : MonoBehaviour
             grounded = true;
         }
     }
+
+
+
+
+    
+    private void debugInputs()
+    {        
+        if (crouched)
+        {
+            Debug.Log("debugInputs: crouched");
+        }
+        else if (jump)
+        {
+            Debug.Log("debugInputs: jump");
+        }
+        else if (blocked)
+        {
+            Debug.Log("debugInputs: blocked");
+        }
+
+
+        if (lightPunchNormal)
+        {
+            Debug.Log("debugInputs: lightPunchNormal");
+        }
+        else if (lightPunchCrouched)
+        {
+            Debug.Log("debugInputs: lightPunchCrouched");
+        }
+        else if (lightPunchAir)
+        {
+            Debug.Log("debugInputs: lightPunchAir");
+        }
+        else if (lightKickNormal)
+        {
+            Debug.Log("debugInputs: lightKickNormal");
+        }
+        else if (lightKickCrouched)
+        {
+            Debug.Log("debugInputs: lightKickCrouched");
+        }
+        else if (lightKickAir)
+        {
+            Debug.Log("debugInputs: lightKickAir");
+        }
+
+        if (heavyPunchNormal)
+        {
+            Debug.Log("debugInputs: heavyPunchNormal : " + this.dmgMultiplier);
+        }
+        else if (heavyPunchCrouched)
+        {
+            Debug.Log("debugInputs: heavyPunchCrouched : " + this.dmgMultiplier);
+        }
+        else if (heavyPunchAir)
+        {
+            Debug.Log("debugInputs: heavyPunchAir : " + this.dmgMultiplier);
+        }
+        else if (heavyKickNormal)
+        {
+            Debug.Log("debugInputs: heavyKickNormal : " + this.dmgMultiplier);
+        }
+        else if (heavyKickCrouched)
+        {
+            Debug.Log("debugInputs: heavyKickCrouched : " + this.dmgMultiplier);
+        }
+        else if (heavyKickAir)
+        {
+            Debug.Log("debugInputs: heavyKickAir : " + this.dmgMultiplier);
+        }
+    }
+
 }

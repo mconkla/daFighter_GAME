@@ -6,7 +6,7 @@ public class animationHandling : MonoBehaviour
 {
 
     Animator myAnimator;
-    Animator effektAnimator;
+    Animator effectAnimator;
     AudioManager myAudioManager;
     attackSystem myAttackSystem;
     controllerInputs myControllerInputs;
@@ -16,7 +16,7 @@ public class animationHandling : MonoBehaviour
     {
         myControllerInputs = this.gameObject.GetComponent<controllerInputs>();
         myAnimator = this.gameObject.GetComponent<Animator>();
-        effektAnimator = this.transform.GetChild(1).GetComponent<Animator>();
+        effectAnimator = this.transform.GetChild(1).GetComponent<Animator>();
         myAudioManager = this.gameObject.GetComponent<AudioManager>();
         myAttackSystem = this.gameObject.GetComponent<attackSystem>();
     }
@@ -79,42 +79,22 @@ public class animationHandling : MonoBehaviour
     {
 
        
-        if (myControllerInputs.heavyPunchState > 0.1)
+        if (myControllerInputs.heavyPunchState > 0.1f)
         {
-            myAnimator.Play("player_big_heavypunch_load");
-            effektAnimator.Play("player_big_heavypunch_load_effekt");
-            effektAnimator.GetComponent<SpriteRenderer>().color = new Color(effektAnimator.GetComponent<SpriteRenderer>().color.r, effektAnimator.GetComponent<SpriteRenderer>().color.g, effektAnimator.GetComponent<SpriteRenderer>().color.b, Mathf.Abs(myControllerInputs.heavyPunchState));
-
-           
-
-
-
-
+            effectAnimator.GetComponent<SpriteRenderer>().color = new Color(effectAnimator.GetComponent<SpriteRenderer>().color.r, effectAnimator.GetComponent<SpriteRenderer>().color.g, effectAnimator.GetComponent<SpriteRenderer>().color.b, Mathf.Abs(myControllerInputs.heavyPunchState));
         }
         else if(myControllerInputs.heavyPunchState == -0.2f)
         {
-            effektAnimator.GetComponent<SpriteRenderer>().color = new Color(effektAnimator.GetComponent<SpriteRenderer>().color.r, effektAnimator.GetComponent<SpriteRenderer>().color.g, effektAnimator.GetComponent<SpriteRenderer>().color.b, 0);
+            effectAnimator.GetComponent<SpriteRenderer>().color = new Color(effectAnimator.GetComponent<SpriteRenderer>().color.r, effectAnimator.GetComponent<SpriteRenderer>().color.g, effectAnimator.GetComponent<SpriteRenderer>().color.b, 100);
 
         }
-        /* if (myControllerInputs.heavyPunchNormal)
-         {
-             myAnimator.Play("player_big_heavypunch_exit");
-             effektAnimator.Play("player_big_heavypunch_exit_effekt");
-
-         }
-         */
-        if (Mathf.Abs(myControllerInputs.dmgMultiplyer) <= 1f && Mathf.Abs(myControllerInputs.dmgMultiplyer) > 0.95f && myControllerInputs.heavyPunchNormal)
-        {
-            myAnimator.Play("player_big_heavypunch_exit");
-            effektAnimator.Play("player_big_heavypunch_exit_effekt_perfekt");
-        }
-        else if (Mathf.Abs(myControllerInputs.dmgMultiplyer) > 1f || Mathf.Abs(myControllerInputs.dmgMultiplyer) <= 0.95f && myControllerInputs.heavyPunchNormal)
-        {
-            myAnimator.Play("player_big_heavypunch_exit");
-            effektAnimator.Play("player_big_heavypunch_exit_effekt");
-        }
+        
+       
         myAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
-        effektAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
+        myAnimator.SetFloat("heavyPunchState", myControllerInputs.heavyPunchState);
+
+        effectAnimator.SetFloat("heavyPunchState", myControllerInputs.heavyPunchState);
+        effectAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
 
         myAnimator.SetBool("block", myControllerInputs.blocked);
 
