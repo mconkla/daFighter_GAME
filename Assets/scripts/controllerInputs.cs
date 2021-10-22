@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class controllerInputs : MonoBehaviour
 {
     
-    public inputModule myInputModule;
+    private inputModule myInputModule;
 
 //    [HideInInspector]
     public bool 
@@ -22,6 +22,10 @@ public class controllerInputs : MonoBehaviour
     public float dmgMultiplyer = 1;
     public bool hitted = false;
 
+    private void Start()
+    {
+        myInputModule = GetComponent<inputModule>();
+    }
     // Update is called once per frame
     void Update()
     {

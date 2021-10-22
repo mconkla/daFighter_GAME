@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 177378753257608038}
   - component: {fileID: 5827108657048907182}
   - component: {fileID: 4522424931611733649}
+  - component: {fileID: 6106334735993345295}
   - component: {fileID: 4240296518410499778}
   m_Layer: 0
   m_Name: basic_player
@@ -533,6 +534,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -605,7 +608,7 @@ MonoBehaviour:
   rb: {fileID: 2452647010029546401}
   speed: 150
   jump: 12000
-  upperBody: {fileID: 0}
+  upperBody: {fileID: 5827108657048907182}
   m_MovementSmoothing: 0.01
 --- !u!114 &2452647010029546404
 MonoBehaviour:
@@ -681,16 +684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b0415a70c05a64998e26d70824055c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: 
-  vertical: 
-  punchInput: 
-  kickInput: 
-  blockInput: 
-  heavyPunch: 
-  heavyKick: 
-  grabbInput: 
-  heavyPunchState: 0
-  heavyKickState: 0
   crouched: 0
   jump: 0
   grounded: 0
@@ -699,7 +692,6 @@ MonoBehaviour:
   grabbed: 0
   heavyAttack: 0
   lightAttack: 0
-  staggerd: 0
   walkLeft: 0
   walkRight: 0
   lightPunchNormal: 0
@@ -714,8 +706,10 @@ MonoBehaviour:
   heavyKickNormal: 0
   heavyKickCrouched: 0
   heavyKickAir: 0
+  heavyPunchState: 0
+  heavyKickState: 0
+  staggerd: 0
   dmgMultiplyer: 1
-  debugText: {fileID: 0}
   hitted: 0
 --- !u!114 &6701059590000973476
 MonoBehaviour:
@@ -789,6 +783,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4195c71248b891469cd258ac516fd00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6106334735993345295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452647010029546335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdd2602a8e9571e46af3935d832ed991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  horizontalInput: 0
+  verticalInput: 0
+  punchInput: 0
+  punchInputDown: 0
+  punchInputUp: 0
+  kickInput: 0
+  kickInputDown: 0
+  kickInputUp: 0
+  heavyPunchInput: 0
+  heavyPunchInputDown: 0
+  heavyPunchInputUp: 0
+  heavyKickInput: 0
+  heavyKickInputDown: 0
+  heavyKickInputUp: 0
+  blockInput: 0
+  blockInputDown: 0
+  blockInputUp: 0
+  grabInput: 0
+  grabInputDown: 0
+  grabInputUp: 0
+  jumpInput: 0
+  jumpInputDown: 0
+  jumpInputUp: 0
 --- !u!114 &4240296518410499778
 MonoBehaviour:
   m_ObjectHideFlags: 0
