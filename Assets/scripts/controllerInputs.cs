@@ -10,7 +10,7 @@ public class controllerInputs : MonoBehaviour
 
 //    [HideInInspector]
     public bool 
-        crouched,jump, grounded, blocked,crouchBlocked,grabbed,
+        crouched,jump, grounded, blocked,grabbed,
         heavyAttack,lightAttack,
         walkLeft, walkRight, 
         lightPunchNormal,lightPunchCrouched,lightPunchAir,lightKickNormal,lightKickCrouched,lightKickAir,
@@ -71,18 +71,13 @@ public class controllerInputs : MonoBehaviour
      */
     private void blockInputs()
     {
-        if (myInputModule.blockInput && !crouched)
+        if (myInputModule.blockInput)
         {
             blocked = true;
-        } 
-        else if (myInputModule.blockInput && crouched)
-        {
-            crouchBlocked = true;
         } 
         if (myInputModule.blockInputUp)//on release
         {
             blocked = false;
-            crouchBlocked = false;
         }
 
     }
@@ -95,66 +90,65 @@ public class controllerInputs : MonoBehaviour
      */
     private void lightInputs()
     {
-        if (!blocked)
+
+        if(!crouched && grounded)
         {
-            if(!crouched && grounded)
+            if (myInputModule.punchInputDown)
             {
-                if (myInputModule.punchInputDown)
-                {
-                    lightPunchNormal = true;
-                }
-                else if (myInputModule.punchInputUp)
-                {
-                    lightPunchNormal = false;
-                }
-                if (myInputModule.kickInputDown)
-                {
-                    lightKickNormal = true;
-                }
-                else if (myInputModule.kickInputUp)
-                {
-                    lightKickNormal = false;
-                }
+                lightPunchNormal = true;
             }
-            else if(!crouched && !grounded)
+            else if (myInputModule.punchInputUp)
             {
-                if (myInputModule.punchInputDown)
-                {
-                    lightPunchAir = true;
-                }
-                else if (myInputModule.punchInputUp)
-                {
-                    lightPunchAir = false;
-                }
-                if (myInputModule.kickInputDown)
-                {
-                    lightKickAir = true;
-                }
-                else if (myInputModule.kickInputUp)
-                {
-                    lightKickAir = false;
-                }
+                lightPunchNormal = false;
             }
-            else if(crouched && grounded)
+            if (myInputModule.kickInputDown)
             {
-                if (myInputModule.punchInputDown)
-                {
-                    lightPunchCrouched = true;
-                }
-                else if (myInputModule.punchInputUp)
-                {
-                    lightPunchCrouched = false;
-                }
-                if (myInputModule.kickInputDown)
-                {
-                    lightKickCrouched = true;
-                }
-                else if (myInputModule.kickInputUp)
-                {
-                    lightKickCrouched = false;
-                }
+                lightKickNormal = true;
+            }
+            else if (myInputModule.kickInputUp)
+            {
+                lightKickNormal = false;
             }
         }
+        else if(!crouched && !grounded)
+        {
+            if (myInputModule.punchInputDown)
+            {
+                lightPunchAir = true;
+            }
+            else if (myInputModule.punchInputUp)
+            {
+                lightPunchAir = false;
+            }
+            if (myInputModule.kickInputDown)
+            {
+                lightKickAir = true;
+            }
+            else if (myInputModule.kickInputUp)
+            {
+                lightKickAir = false;
+            }
+        }
+        else if(crouched && grounded)
+        {
+            if (myInputModule.punchInputDown)
+            {
+                lightPunchCrouched = true;
+            }
+            else if (myInputModule.punchInputUp)
+            {
+                lightPunchCrouched = false;
+            }
+            if (myInputModule.kickInputDown)
+            {
+                lightKickCrouched = true;
+            }
+            else if (myInputModule.kickInputUp)
+            {
+                lightKickCrouched = false;
+            }
+        }
+        
     }
 
 
@@ -209,6 +203,19 @@ public class controllerInputs : MonoBehaviour
                 }
 
             }
+            if (grounded)
+            {
+                lightPunchAir = false;
+                lightPunchAir = false;
+            }
+            else if (!grounded)
+            {
+                lightKickNormal = false;
+                lightPunchNormal = false;
+                lightKickCrouched = false;
+                lightPunchCrouched = false;
+            }
+            /* todo: do we want to have heavy atacks in the air ???
             else if(!crouched && !grounded)
             {
                 this.releaseHeavy("air");
@@ -229,7 +236,7 @@ public class controllerInputs : MonoBehaviour
                     heavyKickAir = false;
                 }
 
-            }   
+            }   */
         }
     }
 

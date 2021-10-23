@@ -63,7 +63,7 @@ public class ai : MonoBehaviour
             {
                 if (otherPlayer.GetComponent<controllerInputs>().crouched == true)
                 {
-                    if (otherPlayer.GetComponent<controllerInputs>().crouchBlocked == true)
+                    if (otherPlayer.GetComponent<controllerInputs>().crouched == true && otherPlayer.GetComponent<controllerInputs>().blocked)
                     {
                     }
                     else
@@ -92,7 +92,7 @@ public class ai : MonoBehaviour
         {
             if (otherPlayer.GetComponent<controllerInputs>().crouched == true)
             {
-                if (otherPlayer.GetComponent<controllerInputs>().crouchBlocked == true)
+                if (otherPlayer.GetComponent<controllerInputs>().crouched == true && otherPlayer.GetComponent<controllerInputs>().blocked)
                 {
                 }
                 else
@@ -119,7 +119,7 @@ public class ai : MonoBehaviour
         {
             if (otherPlayer.GetComponent<controllerInputs>().crouched == true)
             {
-                if (otherPlayer.GetComponent<controllerInputs>().crouchBlocked == true)
+                if (otherPlayer.GetComponent<controllerInputs>().crouched == true && otherPlayer.GetComponent<controllerInputs>().blocked == true)
                 {
                 }
                 else
@@ -163,7 +163,7 @@ public class ai : MonoBehaviour
             {
                 if (otherPlayer.GetComponent<controllerInputs>().crouched == true)
                 {
-                    if (otherPlayer.GetComponent<controllerInputs>().crouchBlocked == true)
+                    if (otherPlayer.GetComponent<controllerInputs>().crouched == true && otherPlayer.GetComponent<controllerInputs>().blocked == true)
                     {
                         //heavy kick
                         //crouch heavy punch
