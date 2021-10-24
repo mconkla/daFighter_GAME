@@ -11,6 +11,10 @@ public class animationHandling : MonoBehaviour
     attackSystem myAttackSystem;
     controllerInputs myControllerInputs;
 
+
+    bool lightPunchNormalPressed, lightKickNormalPressed, lightPunchAirPressed,
+        lightKickAirPressed, lightPunchCrouchedPressed, lightKickCrouchedPressed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,12 @@ public class animationHandling : MonoBehaviour
         checkAxes();
         checkLightAttacks();
         checkHeavyAttacks();
+        checkBlock();
+    }
+
+    void checkBlock()
+    {
+         myAnimator.SetBool("block", myControllerInputs.blocked);
     }
 
     void checkAxes()
@@ -34,26 +44,24 @@ public class animationHandling : MonoBehaviour
        
         myAnimator.SetBool("walk", (myControllerInputs.walkRight || myControllerInputs.walkLeft));
         myAnimator.SetBool("crouch", myControllerInputs.crouched);
-
-        //kann weg
+        myAnimator.SetBool("jump", myControllerInputs.jump);
         myAnimator.SetBool("grounded", myControllerInputs.grounded);
-
-        //jump toDo
     }
+
+
 
     void checkLightAttacks()
     {
         if (myAttackSystem.hitted)
         {
-            myAudioManager.Play("hitted");
+            //myAudioManager.Play("hitted");
         }
-        if (myControllerInputs.lightPunchNormal)
-        {
-            myAnimator.Play("lightpunchNormal_player");
-            myAudioManager.Play("punch");
-           
-        }
-        
+
+
+        this.groundLightAttacks();
+        this.airLightAttacks();
+        this.crouchLightAttacks();
+
         if (myControllerInputs.lightPunchCrouched)
         {
             //toDo
@@ -62,7 +70,6 @@ public class animationHandling : MonoBehaviour
         {
             //toDo
         } 
-        myAnimator.SetBool("kick", myControllerInputs.lightKickNormal);
         
         if (myControllerInputs.lightKickCrouched)
         {
@@ -75,10 +82,87 @@ public class animationHandling : MonoBehaviour
 
     }
 
+    void groundLightAttacks()
+    {
+        if (myControllerInputs.lightPunchNormal && !this.lightPunchNormalPressed)
+        {
+            myAnimator.Play("punch");
+            this.lightPunchNormalPressed = true;
+            //myAudioManager.Play("punch");
+        }
+        if (!myControllerInputs.lightPunchNormal)
+        {
+            this.lightPunchNormalPressed = false;
+        }
+
+
+        if (myControllerInputs.lightKickNormal && !this.lightKickNormalPressed)
+        {
+            myAnimator.Play("kick");
+            this.lightKickNormalPressed = true;
+            //myAudioManager.Play("punch");
+        }
+        if (!myControllerInputs.lightKickNormal)
+        {
+            this.lightKickNormalPressed = false;
+        }
+    }
+
+    void airLightAttacks()
+    {
+        if (myControllerInputs.lightPunchAir && !this.lightPunchAirPressed)
+        {
+            myAnimator.Play("air_punch");
+            this.lightPunchAirPressed = true;
+            //myAudioManager.Play("punch");
+        }
+        if (!myControllerInputs.lightPunchAir)
+        {
+            this.lightPunchAirPressed = false;
+        }
+
+
+        if (myControllerInputs.lightKickAir && !this.lightKickAirPressed)
+        {
+            myAnimator.Play("air_kick");
+            this.lightKickAirPressed = true;
+            //myAudioManager.Play("punch");
+        }
+        if (!myControllerInputs.lightKickAir)
+        {
+            this.lightKickAirPressed = false;
+        }
+    }
+
+    void crouchLightAttacks()
+    {
+        if (myControllerInputs.lightPunchCrouched && !this.lightPunchCrouchedPressed)
+        {
+            myAnimator.Play("crouch_punch");
+            this.lightPunchCrouchedPressed = true;
+            //myAudioManager.Play("punch");
+        }
+        if (!myControllerInputs.lightPunchCrouched)
+        {
+            this.lightPunchCrouchedPressed = false;
+        }
+
+
+        if (myControllerInputs.lightKickCrouched && !this.lightKickCrouchedPressed)
+        {
+            myAnimator.Play("crouch_kick");
+            this.lightKickCrouchedPressed = true;
+            //myAudioManager.Play("punch");
+        }
+        if (!myControllerInputs.lightKickCrouched)
+        {
+            this.lightKickCrouchedPressed = false;
+        }
+    }
+
     void checkHeavyAttacks()
     {
-
-       
+       /*
         if (myControllerInputs.heavyPunchState > 0.1f)
         {
             effectAnimator.GetComponent<SpriteRenderer>().color = new Color(effectAnimator.GetComponent<SpriteRenderer>().color.r, effectAnimator.GetComponent<SpriteRenderer>().color.g, effectAnimator.GetComponent<SpriteRenderer>().color.b, Mathf.Abs(myControllerInputs.heavyPunchState));
@@ -88,15 +172,26 @@ public class animationHandling : MonoBehaviour
             effectAnimator.GetComponent<SpriteRenderer>().color = new Color(effectAnimator.GetComponent<SpriteRenderer>().color.r, effectAnimator.GetComponent<SpriteRenderer>().color.g, effectAnimator.GetComponent<SpriteRenderer>().color.b, 100);
 
         }
-        
-       
+       */
+
+        myAnimator.SetBool("heavyPunchCrouched", myControllerInputs.heavyPunchCrouched);
+        myAnimator.SetBool("heavyKickCrouched", myControllerInputs.heavyKickCrouched);
         myAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
+        myAnimator.SetBool("heavyKickNormal", myControllerInputs.heavyKickNormal);
+
+
         myAnimator.SetFloat("heavyPunchState", myControllerInputs.heavyPunchState);
+        myAnimator.SetFloat("heavyKickState", myControllerInputs.heavyKickState);
+        
 
-        effectAnimator.SetFloat("heavyPunchState", myControllerInputs.heavyPunchState);
-        effectAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
+        
+      
+        
 
-        myAnimator.SetBool("block", myControllerInputs.blocked);
+        //effectAnimator.SetFloat("heavyPunchState", myControllerInputs.heavyPunchState);
+        //effectAnimator.SetBool("heavyPunchNormal", myControllerInputs.heavyPunchNormal);
+
+       
 
 
 

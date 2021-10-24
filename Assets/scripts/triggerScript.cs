@@ -79,7 +79,7 @@ public class triggerScript : MonoBehaviour
             else
             {
                 //blocked
-                if (!collision.GetComponent<controllerInputs>().crouchBlocked)
+                if (!collision.GetComponent<controllerInputs>().crouched && !collision.GetComponent<controllerInputs>().blocked == true)
                 {
                     if (this.dmg > 0)
                     {
