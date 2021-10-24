@@ -10,9 +10,9 @@ public class controllerInputs : MonoBehaviour
 
 //    [HideInInspector]
     public bool 
-        crouched,jump, grounded, blocked,grabbed,
+        crouched,jump,grounded,blocked,grabbed,
         heavyAttack,lightAttack,
-        walkLeft, walkRight, 
+        walkLeft,walkRight, 
         lightPunchNormal,lightPunchCrouched,lightPunchAir,lightKickNormal,lightKickCrouched,lightKickAir,
         heavyPunchNormal,heavyPunchCrouched,heavyPunchAir,heavyKickNormal,heavyKickCrouched,heavyKickAir
         = false;
@@ -206,7 +206,7 @@ public class controllerInputs : MonoBehaviour
             if (grounded)
             {
                 lightPunchAir = false;
-                lightPunchAir = false;
+                lightKickAir = false;
             }
             else if (!grounded)
             {

@@ -12,7 +12,7 @@ public class animationHandling : MonoBehaviour
     controllerInputs myControllerInputs;
 
 
-    bool lightPunchPressed, lightKickNormal, lightPunchAirPressed,
+    bool lightPunchNormalPressed, lightKickNormalPressed, lightPunchAirPressed,
         lightKickAirPressed, lightPunchCrouchedPressed, lightKickCrouchedPressed = false;
 
     // Start is called before the first frame update
@@ -45,11 +45,7 @@ public class animationHandling : MonoBehaviour
         myAnimator.SetBool("walk", (myControllerInputs.walkRight || myControllerInputs.walkLeft));
         myAnimator.SetBool("crouch", myControllerInputs.crouched);
         myAnimator.SetBool("jump", myControllerInputs.jump);
-
-        //kann weg
         myAnimator.SetBool("grounded", myControllerInputs.grounded);
-
-        //jump toDo
     }
 
 
@@ -63,8 +59,8 @@ public class animationHandling : MonoBehaviour
 
 
         this.groundLightAttacks();
-        this.airLightattacks();
-        this.crouchLightattacks();
+        this.airLightAttacks();
+        this.crouchLightAttacks();
 
         if (myControllerInputs.lightPunchCrouched)
         {
@@ -88,31 +84,31 @@ public class animationHandling : MonoBehaviour
 
     void groundLightAttacks()
     {
-        if (myControllerInputs.lightPunchNormal && !this.lightPunchPressed)
+        if (myControllerInputs.lightPunchNormal && !this.lightPunchNormalPressed)
         {
             myAnimator.Play("punch");
-            this.lightPunchPressed = true;
+            this.lightPunchNormalPressed = true;
             //myAudioManager.Play("punch");
         }
         if (!myControllerInputs.lightPunchNormal)
         {
-            this.lightPunchPressed = false;
+            this.lightPunchNormalPressed = false;
         }
 
 
-        if (myControllerInputs.lightKickNormal && !this.lightKickNormal)
+        if (myControllerInputs.lightKickNormal && !this.lightKickNormalPressed)
         {
             myAnimator.Play("kick");
-            this.lightKickNormal = true;
+            this.lightKickNormalPressed = true;
             //myAudioManager.Play("punch");
         }
         if (!myControllerInputs.lightKickNormal)
         {
-            this.lightKickNormal = false;
+            this.lightKickNormalPressed = false;
         }
     }
 
-    void airLightattacks()
+    void airLightAttacks()
     {
         if (myControllerInputs.lightPunchAir && !this.lightPunchAirPressed)
         {
@@ -138,7 +134,7 @@ public class animationHandling : MonoBehaviour
         }
     }
 
-    void crouchLightattacks()
+    void crouchLightAttacks()
     {
         if (myControllerInputs.lightPunchCrouched && !this.lightPunchCrouchedPressed)
         {
